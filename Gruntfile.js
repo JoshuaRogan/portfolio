@@ -1,32 +1,22 @@
 sassFiles = {
-    'site/css/style.min.css': 'assets/sass/main.scss'
+    'site/css/style.min.css': 'assets/style/main.scss'
 }
-
 postcssFiles = {
-    "site/css/style.min.css": ['site/css/style.css']
+    "site/css/style.min.css": ['site/css/style.min.css']
 }
-
 scriptOutput = 'tcc/js/app.min.js';
 scriptFiles = {
-    src: [
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-        'bower_components/owl.carousel/dist/owl.carousel.min.js',
-        'assets/js/**/*.js',
-        'assets/js/main.js',
-     ],
+    src: ['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'bower_components/owl.carousel/dist/owl.carousel.min.js', 'assets/js/**/*.js', 'assets/js/main.js', ],
     dest: scriptOutput
 }
-
 module.exports = function(grunt) {
-
     grunt.initConfig({
         postcss: {
             prod: {
                 options: {
                     map: {
                         inline: false, // save all sourcemaps as separate files...
-                        annotation: 'assets/sass/maps' // ...to the specified directory
+                        annotation: 'assets/style/maps' // ...to the specified directory
                     },
                     // safe: true,
                     processors: [
@@ -44,7 +34,7 @@ module.exports = function(grunt) {
                 options: {
                     map: {
                         inline: false, // save all sourcemaps as separate files...
-                        annotation: 'assets/sass/maps' // ...to the specified directory
+                        annotation: 'assets/style/maps' // ...to the specified directory
                     },
                     // safe: true,
                     processors: [
@@ -68,9 +58,7 @@ module.exports = function(grunt) {
         },
         uglify: {
             dist: {
-                options: {
-
-                },
+                options: {},
                 files: {
                     'tcc/js/app.min.js': [scriptOutput]
                 }
@@ -90,7 +78,7 @@ module.exports = function(grunt) {
                 }
             },
             styles: {
-                files: 'assets/sass/**/*.scss',
+                files: 'assets/style/**/*.scss',
                 tasks: ['sass:dist', 'postcss:dev'],
                 options: {
                     nospawn: true
@@ -107,10 +95,7 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: [
-                        'tcc/**/*', 
-                        'assets/**/*'
-                    ]
+                    src: ['site/**/*', 'assets/**/*']
                 },
                 options: {
                     watchTask: true,
@@ -122,12 +107,25 @@ module.exports = function(grunt) {
             files: {
                 cwd: 'bower_components/font-awesome/fonts', // set working folder / root to copy
                 src: '**/*', // copy all files and subfolders
-                dest: 'tcc/fonts', // destination folder
+                dest: 'site/fonts', // destination folder
                 expand: true // required when using cwd
+            }
+        },
+        wiredep: {
+            task: {
+                // Point to the files that should be updated when
+                // you run `grunt wiredep`
+                src: [
+                    'assets/style/main.scss', // .scss & .sass support...
+                ],
+                options: {
+                    // See wiredep's configuration documentation for the options
+                    // you may pass:
+                    // https://github.com/taptapship/wiredep#configuration
+                }
             }
         }
     });
-
     require('load-grunt-tasks')(grunt);
     grunt.registerTask('default', ['browserSync', 'watch']);
     grunt.registerTask('prod', ['sass:dist', 'postcss:prod', 'concat', 'uglify', 'copy']);
