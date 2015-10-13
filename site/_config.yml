@@ -1,0 +1,11 @@
+# Site settings
+title: Josh Rogan
+email: JoshJRogan@gmail.com
+description: > # Josh Joshua Rogan's website, portfolio, and resume for employers and freelance work in web devloping. Includes work history, skills and more obtained from the University of Pittsburgh and the University of Scranton computer science programs. Along with professional work with Fireman Creative 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://joshuarogan.com" # the base hostname & protocol for your site
+twitter_username: JoshuaRogan
+github_username:  JoshuaRogan
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,14 @@
+######################
+/node_modules
+/bower_components
+.env
+
+# Text Editor Files #
+######################
+*.swp
+*.swo
+
+# Other #
+######################
+Vagrantfile
+/.vagrant

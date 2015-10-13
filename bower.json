@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "homepage": "https://github.com/JoshuaRogan/portfolio",
+  "authors": [
+    "Josh Rogan <jjjr1122@gmail.com>"
+  ],
+  "description": "Josh Rogan personal portfolio website.",
+  "keywords": [
+    "Josh",
+    "Rogan",
+    "Portfolio"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3"
+  }
+}
