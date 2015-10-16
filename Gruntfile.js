@@ -4,12 +4,18 @@ sassFiles = {
 postcssFiles = {
     "site/css/style.min.css": ['site/css/style.min.css']
 }
-scriptOutput = 'tcc/js/app.min.js';
+scriptOutput = 'site/js/app.min.js';
 scriptFiles = {
-    src: ['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'bower_components/owl.carousel/dist/owl.carousel.min.js', 'assets/js/**/*.js', 'assets/js/main.js', ],
+    src: ['bower_components/jquery/dist/jquery.min.js', 
+    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 
+    'bower_components/owl.carousel/dist/owl.carousel.min.js', 
+    'assets/js/**/*.js', 
+    'assets/js/main.js', ],
     dest: scriptOutput
 }
 module.exports = function(grunt) {
+    require('time-grunt')(grunt);
+
     grunt.initConfig({
         postcss: {
             prod: {
@@ -60,7 +66,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {},
                 files: {
-                    'tcc/js/app.min.js': [scriptOutput]
+                    'site/js/app.min.js': [scriptOutput]
                 }
             }
         },
@@ -116,7 +122,7 @@ module.exports = function(grunt) {
                 // Point to the files that should be updated when
                 // you run `grunt wiredep`
                 src: [
-                    'assets/style/main.scss', // .scss & .sass support...
+                    'assets/style/main.scss' // .scss & .sass support...
                 ],
                 options: {
                     // See wiredep's configuration documentation for the options
@@ -124,10 +130,16 @@ module.exports = function(grunt) {
                     // https://github.com/taptapship/wiredep#configuration
                 }
             }
+        },
+        shell: {
+            jekyllBuild: {
+                cwd: 'site',
+                command: 'jekyll build'
+            }
         }
     });
     require('load-grunt-tasks')(grunt);
     grunt.registerTask('default', ['browserSync', 'watch']);
-    grunt.registerTask('prod', ['sass:dist', 'postcss:prod', 'concat', 'uglify', 'copy']);
-    grunt.registerTask('dev', ['sass:dist', 'postcss:dev', 'concat', 'uglify', 'copy']);
+    grunt.registerTask('prod', ['sass:dist', 'postcss:prod', 'concat', 'uglify', 'copy', 'shell:jekyllBuild']);
+    grunt.registerTask('dev', ['sass:dist', 'postcss:dev', 'concat', 'uglify', 'copy', 'shell:jekyllBuild']);
 };
