@@ -140,6 +140,6 @@ module.exports = function(grunt) {
     });
     require('load-grunt-tasks')(grunt);
     grunt.registerTask('default', ['browserSync', 'watch']);
-    grunt.registerTask('prod', ['sass:dist', 'postcss:prod', 'concat', 'uglify', 'copy', 'shell:jekyllBuild']);
-    grunt.registerTask('dev', ['sass:dist', 'postcss:dev', 'concat', 'uglify', 'copy', 'shell:jekyllBuild']);
+    grunt.registerTask('prod', ['sass:dist', 'postcss:prod', 'concat', 'uglify', 'copy']);
+    grunt.registerTask('dev', ['sass:dist', 'postcss:dev', 'concat', 'uglify', 'copy']);
 };

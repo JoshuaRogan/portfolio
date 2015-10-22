@@ -12,3 +12,5 @@
 ######################
 Vagrantfile
 /.vagrant
+
+config/
