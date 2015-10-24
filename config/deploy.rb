@@ -52,11 +52,11 @@ end
 
 
 namespace :deploy do
-  desc 'Build all gulp tasks for production'
+  desc 'Production build all assets on remote server'
   task :build do
     on roles(:all) do
     	within release_path do
-          execute :jekyll, :build, '--source site', '--destination site/_site'
+          execute :gulp, '--production'
 	    end
     end
   end
