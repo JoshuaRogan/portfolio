@@ -1,21 +1,16 @@
-sassFiles = {
+var sassFiles = {
     'site/css/style.min.css': 'assets/style/main.scss'
 }
-postcssFiles = {
+var postcssFiles = {
     "site/css/style.min.css": ['site/css/style.min.css']
 }
-scriptOutput = 'site/js/app.min.js';
-scriptFiles = {
-    src: ['bower_components/jquery/dist/jquery.min.js', 
-    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 
-    'bower_components/owl.carousel/dist/owl.carousel.min.js', 
-    'assets/js/**/*.js', 
-    'assets/js/main.js', ],
+var scriptOutput = 'site/js/app.min.js';
+var scriptFiles = {
+    src: ['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', 'bower_components/foundation/js/foundation.min.js', 'assets/js/**/*.js', 'assets/js/main.js', ],
     dest: scriptOutput
 }
 module.exports = function(grunt) {
     require('time-grunt')(grunt);
-
     grunt.initConfig({
         postcss: {
             prod: {
@@ -66,7 +61,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {},
                 files: {
-                    'site/js/app.min.js': [scriptOutput]
+                    'site/js/app.min.js': 'site/js/app.min.js'
                 }
             }
         },
@@ -97,15 +92,24 @@ module.exports = function(grunt) {
                     nospawn: true
                 }
             },
+            jekyll:{
+                files: 'site/**/*',
+                tasks: ['shell:jekyllBuild'],
+                options: {
+                    nospawn: true
+                }
+            }
         },
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: ['site/**/*', 'assets/**/*']
+                    src : "site/_site/*"
                 },
                 options: {
-                    watchTask: true,
-                    proxy: "http://127.0.0.1:4000/"
+                    server: {
+                        baseDir: "./site/_site"
+                    },
+                    watchTask: true
                 }
             }
         },
@@ -121,8 +125,7 @@ module.exports = function(grunt) {
             task: {
                 // Point to the files that should be updated when
                 // you run `grunt wiredep`
-                src: [
-                    'assets/style/main.scss' // .scss & .sass support...
+                src: ['assets/style/main.scss' // .scss & .sass support...
                 ],
                 options: {
                     // See wiredep's configuration documentation for the options
@@ -133,8 +136,10 @@ module.exports = function(grunt) {
         },
         shell: {
             jekyllBuild: {
-                cwd: 'site',
-                command: 'jekyll build'
+                command: 'cd site && jekyll build'
+            },
+            jekyllServe: {
+                command: 'cd site && jekyll serve --no-watch'
             }
         }
     });

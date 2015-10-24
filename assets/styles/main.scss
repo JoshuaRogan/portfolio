@@ -1,0 +1,40 @@
+//Utils
+// @import "util"
+
+@import "common/variables";
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/foundation/scss/foundation.scss";
+// endbower
+
+@import "vendor_extension/foundation";
+
+//FUCK
+:fullscreen a {
+    display: flex;
+    font-size:rem(20px);
+}
+
+/* custom properties */
+:root {
+  --heading-color: #ff0000;
+}
+
+/* custom selectors */
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
+/* usage */
+:--headings { 
+  color: var(--heading-color);
+}
+
+$line-height: 32px;
+
+/* vertical rhythm function */
+@function vr($amount) {
+  @return $line-height * $amount;
+}
+
+/* input */
+.selector { margin-bottom: vr(2) }

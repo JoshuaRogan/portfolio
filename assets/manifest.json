@@ -1,0 +1,19 @@
+{
+    "dependencies": {
+        "main.js": {
+            "files": ["scripts/main.js"],
+            "main": true
+        },
+        "main.css": {
+            "files": ["styles/main.scss"],
+            "main": true
+        }
+    },
+    "paths": {
+        "source": "./assets/",
+        "dist": "./site/_site/assets/"
+    },
+    "config": {
+        "devUrl": "http://portfolio.droplet.joshuarogan.com"
+    }
+}

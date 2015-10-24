@@ -1,0 +1,86 @@
+/**
+ * Responsive utilities 
+ *  
+ * 
+ */
+
+//Factor to reduce each element by 
+$xs-reduction: .80; 
+$sm-reduction: .90; 
+$md-reduction: .95;
+$lg-reduction: 1.0;
+
+@mixin responsive-man($property, $xs-value, $sm-value, $md-value, $lg-value){
+		#{$property}: $xs-value;
+
+		/* Small devices (tablets, 768px and up) */
+		@media (min-width:$screen-sm-min) {
+			#{$property}: $sm-value;
+		}
+
+		/* Medium devices (desktops, 992px and up) */
+		@media (min-width:$screen-md-min) {
+			#{$property}: $md-value;
+		}
+
+		/* Large devices (large desktops, 1200px and up) */
+		@media (min-width:$screen-lg-min) {
+			#{$property}: $lg-value;
+		}
+}
+
+
+@mixin responsive-auto($property, $value){
+	@include responsive-man($property, $value * $xs-reduction, $value * $sm-reduction, $value * $md-reduction, $value * $lg-reduction) 
+}
+
+
+/** Quick Mixins for Property size to all below it */
+@mixin x_down($property, $value, $screen-max){
+	/* Only Smallest Devcies */
+	@media (max-width:$screen-max) {
+		#{$property}: $value;
+	}
+}
+
+@mixin xs_down($property, $value){
+	@include x_down($property, $value, $screen-xs-max);
+}
+
+@mixin sm_down($property, $value){
+	@include x_down($property, $value, $screen-sm-max);
+}
+
+@mixin md_down($property, $value){
+	@include x_down($property, $value, $screen-md-max);
+}
+
+@mixin lg_down($property, $value){
+	@include x_down($property, $value, $screen-lg-max);
+}
+/** Quick Mixins for Property size to all below it */
+
+/** Quick Mixins for Property size to all above it */
+@mixin x_up($property, $value, $screen-min){
+	/* Only Smallest Devcies */
+	@media (min-width:$screen-min) {
+		#{$property}: $value;
+	}
+}
+
+@mixin xs_up($property, $value){
+	@include x_up($property, $value, $screen-xs-min);
+}
+
+@mixin sm_up($property, $value){
+	@include x_up($property, $value, $screen-sm-min);
+}
+
+@mixin md_up($property, $value){
+	@include x_up($property, $value, $screen-md-min);
+}
+
+@mixin lg_up($property, $value){
+	@include x_up($property, $value, $screen-lg-min);
+}
+/** Quick Mixins for Property size to all above it */
