@@ -5,6 +5,7 @@ require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/bower'
 require 'capistrano/npm'
+require 'capistrano/copy_files'
 
 # Include tasks from other gems included in your Gemfile
 #

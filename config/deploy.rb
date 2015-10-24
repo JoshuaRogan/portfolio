@@ -17,7 +17,7 @@ set :deploy_to, '~/sites/portfolio'
 # set :format, :pretty
 
 # Default value for :log_level is :debug, TRACE, INFO, IMPORTANT
-set :log_level, :TRACE
+set :log_level, :INFO
 
 # Default value for :pty is false
 # set :pty, true
@@ -33,6 +33,9 @@ set :log_level, :TRACE
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+# Copy node_modules for faster deploys 
+set :copy_files, ['node_modules', 'bower_components']
 
 namespace :deploy do
 
@@ -54,7 +57,6 @@ namespace :deploy do
     on roles(:all) do
     	within release_path do
           execute :jekyll, :build, '--source site', '--destination site/_site'
-	      	execute :jekyll, :build, '--source site', '--destination site/_site'
 	    end
     end
   end
