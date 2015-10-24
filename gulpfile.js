@@ -16,7 +16,6 @@ var jshint = require('gulp-jshint');
 var lazypipe = require('lazypipe');
 var less = require('gulp-less');
 var merge = require('merge-stream');
-var minifyCss = require('gulp-minify-css'); //Change to postcss
 var postcss = require('gulp-postcss');
 var plumber = require('gulp-plumber');
 var responsive = require('gulp-responsive-images');
