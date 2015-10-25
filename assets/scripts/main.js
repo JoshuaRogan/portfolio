@@ -9,27 +9,23 @@
  * The routing is enclosed within an anonymous function so that you can
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
- var portfolio = {
-        debug: true
+var portfolio = {
+    debug: true
 };
 (function($) {
-    
-
     portfolio.events = {
         // All pages
         'common': {
-            init: function() {
-                
-            },
+            init: function() {},
             finalize: function() {}
         },
         'home': {
             init: function() {},
             finalize: function() {}
         },
-        'jumbo':{
+        'jumbo': {
             init: function() {
-               portfolio.helpers.displayquote();
+                portfolio.helpers.displayquote();
             },
             finalize: function() {}
         }

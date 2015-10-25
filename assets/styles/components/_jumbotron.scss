@@ -5,39 +5,39 @@
 	background: linear-gradient(top, $josh-dark-blue, darken($josh-dark-blue, 10%));
 	color: white;
 
-	
-
-
 	//JoshuaRogan
 	h1 {
 		@include responsive-man(font-size, 1.5rem, 2.0rem, 3.0rem, 4.0rem, 5.0rem);
 		font-weight: 700;
 	}
-
-	blockquote{
+	blockquote {
 		//Load all quotes only show one
-		&.show{ //Added with JS
+		&.show {
+			//Added with JS
 			display: block;
 		}
-		display: none; 
-		font-weight: 300; 
+		display: none;
+		font-weight: 300;
 		@include responsive-man(font-size, 0.75rem, 1.25rem, 1.5rem, 2.0rem, 2.0rem);
 
 		//Quote
-		p{
+		p {
 			@extend .center-block;
 			margin-bottom: 0;
-			@include responsive-man(width,80vw, 80vw, 80vw, 70vw, 60vw);
+			@include responsive-man(width, 80vw, 80vw, 80vw, 70vw, 60vw);
 		}
 		//Source
-		footer{
-			display: none; //Disable visual source
-			a{
-				color: white; 
-				&::before{
+		footer {
+			display: none;
+
+			//Disable visual source
+			a {
+				color: white;
+
+				&::before {
 					content: "-";
 				}
 			}
 		}
-	}	
+	}
 }
