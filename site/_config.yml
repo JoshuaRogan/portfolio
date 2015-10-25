@@ -10,3 +10,6 @@ keep_files: ['assets']
 
 # Build settings
 markdown: kramdown
+
+collections:
+- quotes
