@@ -190,7 +190,6 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images. And create mulitple images for true 
 // responsive
 gulp.task('images', function() {
-    console.log(globs.images);
     return gulp.src(globs.images)
         //Create multiple responsive images
         .pipe(responsive({
