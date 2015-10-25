@@ -187,7 +187,7 @@ gulp.task('scripts', ['jshint'], function() {
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
 // structure. See: https://github.com/armed/gulp-flatten
 gulp.task('fonts', function() {
-    console.log(globs.bower);
+    // console.log(globs.bower);
     return gulp.src(globs.fonts).pipe(flatten()).pipe(gulp.dest(path.dist + 'fonts')).pipe(browserSync.stream());
 });
 // ### Images
