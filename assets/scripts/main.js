@@ -18,8 +18,9 @@ var portfolio = {
         'common': {
             init: function() {
                 window.sr = new scrollReveal({
-
+                    vFactor: 0
                 });
+                portfolio.helpers.loadCSS('/assets/styles/main.css');
             },
             finalize: function() {
 

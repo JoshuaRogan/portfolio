@@ -35,6 +35,7 @@
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
+    "gulp-file": "^0.2.0",
     "gulp-flatten": "0.0.4",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.2.1",
@@ -59,5 +60,3 @@
     "wiredep": "^2.2.2"
   }
 }
-
-

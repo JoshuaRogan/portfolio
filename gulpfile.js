@@ -75,11 +75,12 @@ var revManifest = path.dist + 'assets.json';
 //   .pipe(cssTasks('main.css')
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
-var cssTasks = function(filename) {
+var cssTasks = function(filename, inline) {
+    if(inline === undefined) inline = false; 
     return lazypipe().pipe(function() {
         return gulpif(!enabled.failStyleTask, plumber());
     }).pipe(function() {
-        return gulpif(enabled.maps, sourcemaps.init());
+        return gulpif(enabled.maps  && !inline, sourcemaps.init());
     }).pipe(function() {
         return gulpif('*.less', less());
     }).pipe(function() {
@@ -90,7 +91,10 @@ var cssTasks = function(filename) {
             errLogToConsole: !enabled.failStyleTask
         }));
     }).pipe(concat, filename).pipe(function() {
-        if (enabled.isProduction) {
+        if(inline){
+            return postcss([autoprefixer, cssnext, cssnano({discardComments: {removeAll: true}})]);
+        }
+        else if (enabled.isProduction) {
             return postcss([autoprefixer, cssnext, cssnano]);
         } else {
             return postcss([autoprefixer, cssnext]);
@@ -98,7 +102,7 @@ var cssTasks = function(filename) {
     }).pipe(function() {
         return gulpif(enabled.rev, rev());
     }).pipe(function() {
-        return gulpif(enabled.maps, sourcemaps.write('.', {
+        return gulpif(enabled.maps && !inline, sourcemaps.write('.', {
             sourceRoot: 'assets/styles/'
         }));
     })();
@@ -157,7 +161,8 @@ gulp.task('styles', ['wiredep'], function() {
         }
         merged.add(gulp.src(dep.globs, {
             base: 'styles'
-        }).pipe(cssTasksInstance));
+        })
+        .pipe(cssTasksInstance));
     });
     return merged.pipe(writeToManifest('styles'));
 });
@@ -259,7 +264,7 @@ gulp.task('watch', function() {
             baseDir: "./app/_site"
         }
     });
-    gulp.watch([path.source + 'styles/**/*'], ['styles']);
+    gulp.watch([path.source + 'styles/**/*'], ['styles', 'inlinecss']);
     gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
     gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
     gulp.watch([path.source + 'images/**/*'], ['images']);
@@ -270,7 +275,7 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-    runSequence('styles', 'scripts', ['fonts', 'images'], 'jekyll', callback);
+    runSequence('styles', 'inlinecss', 'scripts', ['fonts', 'images'], 'jekyll', callback);
 });
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
@@ -287,6 +292,20 @@ gulp.task('jekyll', function() {
         console.log(stdout);
         browserSync.reload();
     });
+});
+
+gulp.task('inlinecss', function(){
+    if (enabled.isProduction){
+        return gulp.src(project.css)
+        .pipe(cssTasks('main.css', true))
+        .pipe(gulp.dest('./app/_includes/'));
+    }
+    else{
+        exec('rm ./app/_includes/main.css && touch ./app/_includes/main.css ', function(err, stdout, stderr) {
+            console.log(stdout);
+            browserSync.reload();
+        });
+    }
 });
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
