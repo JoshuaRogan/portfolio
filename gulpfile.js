@@ -261,14 +261,14 @@ gulp.task('watch', function() {
     browserSync.init({
         files: ['{lib,templates}/**/*.php', '*.php'],
         server: {
-            baseDir: "./site/_site"
+            baseDir: "./app/_site"
         }
     });
     gulp.watch([path.source + 'styles/**/*'], ['styles']);
     gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
     gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
     gulp.watch([path.source + 'images/**/*'], ['images']);
-    gulp.watch(['./site/**/*', '!./site/_site/**/*', '!./site/dist/**/*'], ['jekyll']);
+    gulp.watch(['./app/**/*', '!./app/_site/**/*', '!./app/dist/**/*'], ['jekyll']);
     gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
 // ### Build
@@ -288,7 +288,7 @@ gulp.task('wiredep', function() {
 });
 //Build jekyll on file changes not in dist
 gulp.task('jekyll', function() {
-    exec('jekyll build --source=site --destination=site/_site', function(err, stdout, stderr) {
+    exec('jekyll build --source=app --destination=app/_site', function(err, stdout, stderr) {
         console.log(stdout);
         browserSync.reload();
     });

@@ -11,7 +11,7 @@
     },
     "paths": {
         "source": "./assets/",
-        "dist": "./site/_site/assets/"
+        "dist": "./app/_site/assets/"
     },
     "config": {
         "devUrl": "http://portfolio.droplet.joshuarogan.com"
