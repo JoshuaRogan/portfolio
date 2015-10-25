@@ -2,8 +2,7 @@
 <html>
 
   {% include head.html %}
-
-  <body>
+  <body class="{% if page.page %}{{page.page}}{% else %}default{% endif %}">
     <div class="global-wrapper">
         {% include header.html %}
 
