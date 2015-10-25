@@ -53,8 +53,7 @@ var project = manifest.getProjectGlobs();
 var enabled = {
     // Enable static asset revisioning when `--production`
     rev: false,
-    isProduction: argv.production, 
-
+    isProduction: argv.production,
     uglifyTask: argv.production,
     // Disable source maps when `--production`
     maps: !argv.production,
@@ -79,32 +78,24 @@ var revManifest = path.dist + 'assets.json';
 var cssTasks = function(filename) {
     return lazypipe().pipe(function() {
         return gulpif(!enabled.failStyleTask, plumber());
-    })
-    .pipe(function() {
+    }).pipe(function() {
         return gulpif(enabled.maps, sourcemaps.init());
-    })
-    .pipe(function() {
+    }).pipe(function() {
         return gulpif('*.less', less());
-    })
-    .pipe(function() {
+    }).pipe(function() {
         return gulpif('*.scss', sass({
             outputStyle: 'nested', // libsass doesn't support expanded yet
             precision: 10,
             includePaths: ['.'],
             errLogToConsole: !enabled.failStyleTask
         }));
-    })
-    .pipe(concat, filename)
-    .pipe(function(){
-        if(enabled.isProduction){
+    }).pipe(concat, filename).pipe(function() {
+        if (enabled.isProduction) {
             return postcss([autoprefixer, cssnext, cssnano]);
-        }
-        else{
+        } else {
             return postcss([autoprefixer, cssnext]);
         }
-        
-    })
-    .pipe(function() {
+    }).pipe(function() {
         return gulpif(enabled.rev, rev());
     }).pipe(function() {
         return gulpif(enabled.maps, sourcemaps.write('.', {
@@ -122,20 +113,20 @@ var cssTasks = function(filename) {
 var jsTasks = function(filename) {
     // console.log(filename);
     return lazypipe().pipe(function() {
-            return gulpif(enabled.maps, sourcemaps.init());
-        }).pipe(concat, filename)
-        .pipe(function(){
-            return gulpif(enabled.uglifyTask, uglify({compress: {
-            'drop_debugger': enabled.stripJSDebug
-          }}));
-        })
-        .pipe(function() {
-            return gulpif(enabled.rev, rev());
-        }).pipe(function() {
-            return gulpif(enabled.maps, sourcemaps.write('.', {
-                sourceRoot: 'assets/scripts/'
-            }));
-        })();
+        return gulpif(enabled.maps, sourcemaps.init());
+    }).pipe(concat, filename).pipe(function() {
+        return gulpif(enabled.uglifyTask, uglify({
+            compress: {
+                'drop_debugger': enabled.stripJSDebug
+            }
+        }));
+    }).pipe(function() {
+        return gulpif(enabled.rev, rev());
+    }).pipe(function() {
+        return gulpif(enabled.maps, sourcemaps.write('.', {
+            sourceRoot: 'assets/scripts/'
+        }));
+    })();
 };
 // ### Write to rev manifest
 // If there are any revved files then write them to the rev manifest.
@@ -194,10 +185,14 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images. And create mulitple images for true 
 // responsive
 gulp.task('images', function() {
+    console.log(globs.images);
     return gulp.src(globs.images)
         //Create multiple responsive images
         .pipe(responsive({
             '**': [{
+                width: '100%',
+                withoutEnlargement: true
+            }, {
                 width: 3000,
                 withoutEnlargement: true,
                 rename: {
