@@ -264,7 +264,7 @@ gulp.task('watch', function() {
             baseDir: "./app/_site"
         }
     });
-    gulp.watch([path.source + 'styles/**/*'], ['styles', 'inlinecss']);
+    gulp.watch([path.source + 'styles/**/*'], ['styles']);
     gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
     gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
     gulp.watch([path.source + 'images/**/*'], ['images']);
@@ -275,7 +275,7 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-    runSequence('styles', 'inlinecss', 'scripts', ['fonts', 'images'], 'jekyll', callback);
+    runSequence('styles', 'scripts', ['fonts', 'images'], 'jekyll', callback);
 });
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
@@ -294,19 +294,7 @@ gulp.task('jekyll', function() {
     });
 });
 
-gulp.task('inlinecss', function(){
-    if (enabled.isProduction){
-        return gulp.src(project.css)
-        .pipe(cssTasks('main.css', true))
-        .pipe(gulp.dest('./app/_includes/'));
-    }
-    else{
-        exec('rm ./app/_includes/main.css && touch ./app/_includes/main.css ', function(err, stdout, stderr) {
-            console.log(stdout);
-            browserSync.reload();
-        });
-    }
-});
+
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
 gulp.task('default', ['clean'], function() {
