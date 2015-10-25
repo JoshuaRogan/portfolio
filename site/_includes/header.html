@@ -1,39 +1,28 @@
 <header>
-    <nav class="top-bar foundation-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="#">Joshua Rogan</a></h1>
+    <div class="collapse" id="exCollapsingNavbar">
+        <div class="bg-inverse p-a">
+            <h4>Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Joshua Rogan <i class="fa fa-500px"></i></a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
         </ul>
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-              <li><a href="/downloads/resume.pdf" target="_blank">Résumé</a></li>
-                <li class="has-dropdown">
-                    <a href="#">Hire Me</a>
-                    <ul class="dropdown">
-                        <li><a href="/skills">Skill Set</a></li>
-                        <li><a href="/experience">Experience</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="/freelance"> Pricing Information</a></li>
-                        <li><a href="/contact">Contact Me</a></li>
-                        <li><a href="/downloads/resume.pdf" target="_blank">Résumé</a></li>
-                    </ul>
-                </li>
-                <li class="has-dropdown">
-                    <a href="#">Personal</a>
-                    <ul class="dropdown">
-                      <li><a href="/personal">About Me</a></li>
-                      <li><a href="/achievements">Achievements</a></li>
-                      <li><a href="/contact">Contact Me</a></li>
-                      <li class="divider"></li>
-                      <li><a href="/downloads/resume.pdf" target="_blank">Résumé</a></li>
-                    </ul>
-                </li>
-                <li><a href="/contact">Contact Me</a></li>
-            </ul>
-
-        </section>
+        <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+        &#9776;
+        </button>
     </nav>
 </header>
