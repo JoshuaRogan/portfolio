@@ -16,8 +16,14 @@ var portfolio = {
     portfolio.events = {
         // All pages
         'common': {
-            init: function() {},
-            finalize: function() {}
+            init: function() {
+                window.sr = new scrollReveal({
+                    wait:     '100ms'
+                });
+            },
+            finalize: function() {
+
+            }
         },
         'home': {
             init: function() {},

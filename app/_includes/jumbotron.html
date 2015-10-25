@@ -1,5 +1,5 @@
 <section class='jumbotron'>
-    <h1 data-sr='reset'> Joshua Rogan </h1>
+    <h1> Joshua Rogan </h1>
     <!-- Automatic Quote Generator Here -->
     {% for quote in site.quotes %}
     <blockquote cite="Author of the Quote">
@@ -12,5 +12,5 @@
         </footer>
     </blockquote>
     {% endfor %}
-    <a href="{{site.baseurl}}/contact.html" class="btn btn-success btn-lg"> Hire Me! </a>
+    <a href="{{site.baseurl}}/contact.html" data-sr class="btn btn-success btn-lg"> Hire Me! </a>
 </section>

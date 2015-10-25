@@ -1,23 +1,39 @@
 {
-    "name": "portfolio",
-    "version": "1.0.0",
-    "homepage": "https://github.com/JoshuaRogan/portfolio",
-    "authors": ["Josh Rogan <jjjr1122@gmail.com>"],
-    "description": "Josh Rogan personal portfolio website.",
-    "keywords": ["Josh", "Rogan", "Portfolio"],
-    "license": "MIT",
-    "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
-    "dependencies": {
-        "modernizr": "~3.1.0",
-        "font-awesome": "fontawesome#~4.4.0",
-        "bootstrap": "~4.0.0"
-    },
-    "resolutions": {
-        "modernizr": "~3.1.0"
-    },
-    "overrides": {
-        "font-awesome": {
-            "main": ["./scss/font-awesome.scss", "./fonts/*"]
-        }
+  "name": "portfolio",
+  "version": "1.0.0",
+  "homepage": "https://github.com/JoshuaRogan/portfolio",
+  "authors": [
+    "Josh Rogan <jjjr1122@gmail.com>"
+  ],
+  "description": "Josh Rogan personal portfolio website.",
+  "keywords": [
+    "Josh",
+    "Rogan",
+    "Portfolio"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~3.1.0",
+    "font-awesome": "fontawesome#~4.4.0",
+    "bootstrap": "~4.0.0",
+    "scrollreveal": "scrollReveal.js#~2.3.2"
+  },
+  "resolutions": {
+    "modernizr": "~3.1.0"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
     }
+  }
 }

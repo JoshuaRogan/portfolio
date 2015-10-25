@@ -3,7 +3,7 @@
 
   {% include head.html %}
   <body class="{% if page.page %}{{page.page}}{% else %}default{% endif %} {% if page.jumbotron %}jumbo{% endif %}">
-    <div class="global-wrapper">
+    <div data-sr class="global-wrapper">
         {% include header.html %}
 
         {% if page.jumbotron %}
