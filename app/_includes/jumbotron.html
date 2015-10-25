@@ -1,16 +1,18 @@
 <section class='jumbotron'>
-    <h1> Joshua Rogan </h1>
-    <!-- Automatic Quote Generator Here -->
-    {% for quote in site.quotes %}
-    <blockquote cite="Author of the Quote">
+    <div data-sr>
+        <h1> Joshua Rogan </h1>
+        <!-- Automatic Quote Generator Here -->
+        {% for quote in site.quotes %}
+        <blockquote cite="Author of the Quote">
 
-        <p>&ldquo;{{quote.quote}}&rdquo;</p>
-        <footer>
-            <!-- quote source url -->
-            <a href="#">{{quote.source}}</a>
-            <!-- quote source url -->
-        </footer>
-    </blockquote>
-    {% endfor %}
-    <a href="{{site.baseurl}}/contact.html" data-sr class="btn btn-success btn-lg"> Hire Me! </a>
+            <p>&ldquo;{{quote.quote}}&rdquo;</p>
+            <footer>
+                <!-- quote source url -->
+                <a href="#">{{quote.source}}</a>
+                <!-- quote source url -->
+            </footer>
+        </blockquote>
+        {% endfor %}
+        <a  href="{{site.baseurl}}/contact.html" data-sr class="btn btn-success btn-lg"> Hire Me! </a>
+    </div>
 </section>
