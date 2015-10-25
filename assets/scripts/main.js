@@ -18,7 +18,7 @@ var portfolio = {
         'common': {
             init: function() {
                 window.sr = new scrollReveal({
-                    wait:     '100ms'
+
                 });
             },
             finalize: function() {
