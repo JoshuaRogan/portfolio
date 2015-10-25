@@ -1,34 +1,43 @@
 .jumbotron {
-	@extend .container-fluid;
+	@extend .container-fluid, .text-center;
+	@include responsive-man(min-height, 20vh, 30vh, 40vh, 40vh, 45vh);
 	background-color: $josh-dark-blue;
+	background: linear-gradient(top, $josh-dark-blue, darken($josh-dark-blue, 10%));
 	color: white;
+
+	
+
 
 	//JoshuaRogan
 	h1 {
-		@include responsive-man(font-size, 1.0rem, 2.0rem, 3.0rem, 4.0rem, 5.0rem);
+		@include responsive-man(font-size, 1.5rem, 2.0rem, 3.0rem, 4.0rem, 5.0rem);
+		font-weight: 700;
 	}
-	
-	// .jumbotron h1 {
-	// 	font-size: 5rem;
-	// }
-	// @media (max-width:33.9em) {
-	// 	.jumbotron h1 {
-	// 		font-size: 1rem;
-	// 	}
-	// }
-	// @media (max-width:47.9em) {
-	// 	.jumbotron h1 {
-	// 		font-size: 2rem;
-	// 	}
-	// }
-	// @media (max-width:61.9em) {
-	// 	.jumbotron h1 {
-	// 		font-size: 3rem;
-	// 	}
-	// }
-	// @media (max-width:74.9em) {
-	// 	.jumbotron h1 {
-	// 		font-size: 4rem;
-	// 	}
-	// }
+
+	blockquote{
+		//Load all quotes only show one
+		&.show{ //Added with JS
+			display: block;
+		}
+		display: none; 
+		font-weight: 300; 
+		@include responsive-man(font-size, 0.75rem, 1.25rem, 1.5rem, 2.0rem, 2.0rem);
+
+		//Quote
+		p{
+			@extend .center-block;
+			margin-bottom: 0;
+			@include responsive-man(width,80vw, 80vw, 80vw, 70vw, 60vw);
+		}
+		//Source
+		footer{
+			display: none; //Disable visual source
+			a{
+				color: white; 
+				&::before{
+					content: "-";
+				}
+			}
+		}
+	}	
 }

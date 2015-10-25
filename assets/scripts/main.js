@@ -9,15 +9,28 @@
  * The routing is enclosed within an anonymous function so that you can
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
+ var portfolio = {
+        debug: true
+};
 (function($) {
-    var PORTFOLIO = {
+    
+
+    portfolio.events = {
         // All pages
         'common': {
-            init: function() {},
+            init: function() {
+                
+            },
             finalize: function() {}
         },
         'home': {
             init: function() {},
+            finalize: function() {}
+        },
+        'jumbo':{
+            init: function() {
+               portfolio.helpers.displayquote();
+            },
             finalize: function() {}
         }
     };
@@ -26,7 +39,7 @@
     var UTIL = {
         fire: function(func, funcname, args) {
             var fire;
-            var namespace = PORTFOLIO;
+            var namespace = portfolio.events;
             funcname = (funcname === undefined) ? 'init' : funcname;
             fire = func !== '';
             fire = fire && namespace[func];

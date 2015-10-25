@@ -1,7 +1,7 @@
 {
     "dependencies": {
         "main.js": {
-            "files": ["scripts/main.js"],
+            "files": ["scripts/main.js", "scripts/**/*.js"],
             "main": true
         },
         "main.css": {
