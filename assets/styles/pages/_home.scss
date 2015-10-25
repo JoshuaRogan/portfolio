@@ -9,7 +9,7 @@ body.home main{
 		align-items: center; 
 
 		.image-wrapper{
-			@extend .col-sm-4, .center-block;
+			@extend .col-md-4, .center-block;
 
 			img{
 				@extend .center-block, .img-responsive;
@@ -17,7 +17,20 @@ body.home main{
 		}
 
 		> div{
-			@extend .col-sm-8;
+			@extend .col-md-8;
+			.final{
+				font-size: 0.8rem;
+			}
+		}
+
+		&.alt{
+			.image-wrapper{
+				@extend .col-md-push-8;
+			}
+
+			>div{
+				@extend .col-md-pull-4;
+			}
 		}
 	}
 
