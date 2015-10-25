@@ -7,9 +7,13 @@
     <div class="global-wrapper">
         {% include header.html %}
 
-        <main class="main-wrapper">
+        {% if page.jumbotron %}
+            {% include jumbotron.html %}
+        {% endif %}
+
+        <div class="main-wrapper">
             {{ content }}
-        </main>
+        </div>
 
         {% include footer.html %}
 
