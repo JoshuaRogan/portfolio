@@ -262,7 +262,8 @@ gulp.task('watch', function() {
         files: ['{lib,templates}/**/*.php', '*.php'],
         server: {
             baseDir: "./app/_site"
-        }
+        },
+        notify: false
     });
     gulp.watch([path.source + 'styles/**/*'], ['styles']);
     gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);

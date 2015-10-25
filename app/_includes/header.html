@@ -1,30 +1,54 @@
 <header>
     <div class="collapse" id="exCollapsingNavbar">
         <div class="bg-inverse p-a">
-            <h4>Collapsed content</h4>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
+            <ul class='nav'>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Experience</a></li>
+                <li><a href='#'>Portfolio</a></li>
+                <li><a href="#">Pricing Information</a></li>
+                <li><a href='#'>About Me</a></li>
+                <li><a href='#'>Contact Me</a></li>
+            </ul>
         </div>
     </div>
     <nav class="navbar navbar-dark bg-primary">
         <div data-sr class="nav-wrapper">
             <a class="navbar-brand" href="/">Joshua Rogan</a>
             <ul class="nav navbar-nav pull-right">
-                <li class="nav-item active">
+                <li class="nav-item sr-only">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Résumé</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hire Me <span class="caret"></span></a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="#">Skill Set</a></li>
+                        <li><a href="#">Experience</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Pricing Information</a></li>
+                        <li><a href="#">Contact Me</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personal <span class="caret"></span></a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="#">About Me</a></li>
+                        <li><a href="#">Achievements</a></li>
+                        <li><a href="#">Contact Me</a></li>
+                        <li><a href="#">Résumé</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Contact Me</a>
                 </li>
             </ul>
         </div>
-        <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-        &#9776;
-        </button>
+        <div class='mobile-nav'>
+            <a class="navbar-brand" href="/">Joshua Rogan</a>
+            <button  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">&#9776;</button>
+        </div>
+        
     </nav>
 </header>

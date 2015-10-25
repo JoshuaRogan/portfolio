@@ -1,10 +1,59 @@
 header{
+	#exCollapsingNavbar{
+		div.bg-inverse{
+			background-color: $josh-dark-blue;
+		}
+		ul.nav{
+			@extend .container, .text-center;
+			li{
+				height: 2.5rem;
+				a{
+					color: white;
+				}
+			}
+		}
+	}
 	nav{
+		.dropdown{
+			ul{
+				min-width: 180px;
+				padding: 0 0; 
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+				li {
+					padding: 0.50rem 1rem; 
+					a{
+						color: $josh-dark-blue; 
+						&:hover{
+							color: $josh-dark-blue; 
+							text-decoration: none; 
+						}
+					}
+					&:hover{
+						background-color: #f5f5f5;
+					}
+					&.active{
+						background-color: $josh-dark-blue;
+						a{
+							color: white; 
+						}
+					}
+				}
+			}
+		}
 		.nav-wrapper{
-			@extend .container;
+			@extend .container, .hidden-xs-down;
+			ul{
+
+			}
 		}
 		a{
 			font-weight: 400;
+		}
+	}
+	.mobile-nav{
+		@extend .hidden-sm-up;
+		button{
+			@extend .navbar-toggler, .pull-right;
 		}
 	}
 }
