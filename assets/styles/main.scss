@@ -1,7 +1,4 @@
-//Utils
-@import "util/misc";
-@import "util/responsive";
-
+//Global
 @import "common/variables";
 
 //Vendor Overrides 
@@ -14,7 +11,19 @@
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
+// //Utils
+@import "util/misc";
+@import "util/responsive";
+
+
+
 //Main Layout Sections 
 @import "layouts/content";
 @import "layouts/header";
 @import "layouts/footer";
+
+//Main Components 
+@import "components/jumbotron";
+
+//Page Specific styles 
+@import "pages/home";

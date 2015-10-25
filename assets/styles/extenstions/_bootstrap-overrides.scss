@@ -6,8 +6,8 @@
 //	Colors
 //
 //---------------------- 
-$brand-primary:         $dark-blue;
-$brand-success:			$light-red;
+$brand-primary:         $josh-dark-blue;
+$brand-success:			$josh-light-red;
 
 //----------------------
 //
@@ -17,3 +17,10 @@ $brand-success:			$light-red;
 $border-radius:          0;
 $border-radius-lg:       0;
 $border-radius-sm:       0;
+
+/**
+ * Font Overrides
+ * 
+ */
+$font-family-sans-serif:     "Lato", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          "Lato", "Times New Roman", Times, serif !default;

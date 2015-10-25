@@ -1,0 +1,34 @@
+.jumbotron {
+	@extend .container-fluid;
+	background-color: $josh-dark-blue;
+	color: white;
+
+	//JoshuaRogan
+	h1 {
+		@include responsive-man(font-size, 1.0rem, 2.0rem, 3.0rem, 4.0rem, 5.0rem);
+	}
+	
+	// .jumbotron h1 {
+	// 	font-size: 5rem;
+	// }
+	// @media (max-width:33.9em) {
+	// 	.jumbotron h1 {
+	// 		font-size: 1rem;
+	// 	}
+	// }
+	// @media (max-width:47.9em) {
+	// 	.jumbotron h1 {
+	// 		font-size: 2rem;
+	// 	}
+	// }
+	// @media (max-width:61.9em) {
+	// 	.jumbotron h1 {
+	// 		font-size: 3rem;
+	// 	}
+	// }
+	// @media (max-width:74.9em) {
+	// 	.jumbotron h1 {
+	// 		font-size: 4rem;
+	// 	}
+	// }
+}
