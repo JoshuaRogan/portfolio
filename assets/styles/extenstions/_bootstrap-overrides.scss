@@ -1,26 +1,27 @@
 //Variable Overrides 
-
-
+$enable-flex: true;
 //----------------------
 //
 //	Colors
 //
 //---------------------- 
-$brand-primary:         $josh-dark-blue;
-$brand-success:			$josh-light-red;
-
+$brand-primary: $josh-dark-blue;
+$brand-success: $josh-light-red;
 //----------------------
 //
 //	Borders
 //
 //---------------------- 
-$border-radius:          0;
-$border-radius-lg:       0;
-$border-radius-sm:       0;
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 
-/**
- * Font Overrides
- * 
- */
-$font-family-sans-serif:     "Lato", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          "Lato", "Times New Roman", Times, serif !default;
+//----------------------
+//
+//	Font Overrides
+//
+//---------------------- 
+$font-family-sans-serif: "Lato", Helvetica, Arial, sans-serif;
+$font-family-serif: "Lato", "Times New Roman", Times, serif;
+$link-color: darken($josh-medium-blue, 10%);
+$link-hover-color: darken($link-color, 15%);

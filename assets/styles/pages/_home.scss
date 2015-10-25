@@ -1,3 +1,25 @@
-.page-home{
-	
+/**
+ * Page styling for just the home page. 
+ *
+ */
+
+body.home main{
+	> section{
+		@extend .row;
+		align-items: center; 
+
+		.image-wrapper{
+			@extend .col-sm-4, .center-block;
+
+			img{
+				@extend .center-block, .img-responsive;
+			}
+		}
+
+		> div{
+			@extend .col-sm-8;
+		}
+	}
+
+
 }

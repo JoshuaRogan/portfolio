@@ -4,16 +4,42 @@ page: home
 jumbotron: true
 ---
 <main>
-    <h1 class="page-heading">Hello World</h1>
-    <ul class="post-list">
-        {% for post in site.posts %}
-        <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-        </li>
-        {% endfor %}
-    </ul>
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    <h1>Hello World</h1>
+    <section>
+        <div class="image-wrapper">
+            <img src="http://joshuarogan.com/images/who-am-i.png" alt="Who am I image">
+        </div>
+        <div>
+            <h2>Who am I?</h2>
+            <p>Hello, potential employer or stalker! My name is Joshua Rogan. I have earned my bachelors degree in <strong>computer science</strong> at the <strong>University of Pittsburgh</strong>. In the past I studied at the University of Scranton, also as a computer science major. I made the dean’s list three times and have a GPA above 3.5 in computer science courses.</p>
+            <p>I am currently working at <a href="http://firemancreative.com">Fireman Creative</a> as a full stack developer in Pittsburgh Pennsylvania. I also do a significant amount of freelance part time. </p>
+            <p>I am a <strong>programmer</strong> &amp; <strong>designer</strong> who specializes in <strong>web development</strong>.</p>
+            <p class='final'>Find out more about me by going to my <a href="#">personal</a> page!</p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h2>Why hire me?</h2>
+            <p><strong>As a business:</strong> As a freelance web developer, I have experience working with clients in a variety of disciplines, including writers, nurses, professors, and students to name a few. I also have experience as a technical consultant at the University of Scranton. There I assisted students and faculty with a variety of technical support issues. Through my combined work experience and academic training I gained interpersonal and practical skills, making me an <strong>adaptable</strong> and <strong>dependable</strong> employee qualified for any technical field.</p>
+            <p>My experience at a web development agency has also given me more experience working with a wide range of development projects from simple   <a href="//wordpress.org" target="_blank">WordPress</a> and <a href="//jekyllrb.com" target='_blank'>Jekyll</a> applications to full scale database heavy systems built with <a href="//laravel.com/" target='_blank'>Laravel</a> and <a href="//codeigniter.com/" target='_blank'>CodeIgniter</a></p>
+            <p><strong>As an individual:</strong> My experience working as a web developer and technical consultant has shaped my philosophy on professional conduct. I always make myself approachable, easy to contact, and flexible in any way I can. I can meet you in person, by phone or video messaging, or whichever way is most convenient for you. I am also open to working out a payment method that best fits your needs.</p>
+            <p class='small'> Still not convinced? Check out the <a href="/skills">skills</a>, <a href="/experience"> experience</a>, <a href="/portfolio"> portfolio</a>, and <a href="/achievements">achievements</a> pages or check out my <a href="/downloads/resume.pdf">resumé</a> directly.</p>
+
+        </div>
+        <div class="image-wrapper">
+            <img src="http://joshuarogan.com/images/why-hire-me.png" alt="Who am I image">
+        </div>
+    </section>
+
+    <section>
+        <div class="image-wrapper">
+            <img src="http://joshuarogan.com/images/responsive-design.png" alt="Who am I image">
+        </div>
+        <div>
+            <h2>What can I offer you?</h2>
+            <p>I develop high quality <strong>responsive</strong>, <strong>mobile-first</strong>, web applications. I can provide fully managed hosting solutions for any projects of any scale using multiple <strong>cloud hosting</strong> providers such as <a href="//digitalocean.com">Digital Ocean</a>, <a href="//www.linode.com/">Linode</a> and <a href="//aws.amazon.com/getting-started/">Amazon</a>.    </p>
+            <p class='final'>Please take a look at the <a href="/freelance">freelance</a> information page if you are looking for a web developer.</p>
+        </div>
+    </section>
 </main>

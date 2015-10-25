@@ -1,21 +1,19 @@
 //Global
 @import "common/variables";
+@import "common/typography";
 
 //Vendor Overrides 
 @import "extenstions/bootstrap-overrides";
 
-
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap/scss/bootstrap.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
 // //Utils
 @import "util/misc";
 @import "util/responsive";
-
-
 
 //Main Layout Sections 
 @import "layouts/content";
