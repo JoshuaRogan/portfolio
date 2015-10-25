@@ -5,82 +5,31 @@
  */
 
 //Factor to reduce each element by 
-$xs-reduction: .80; 
-$sm-reduction: .90; 
-$md-reduction: .95;
-$lg-reduction: 1.0;
+$xs-reduction: .75; 
+$sm-reduction: .85; 
+$md-reduction: .90;
+$lg-reduction: .95;
+$xl-reduction: 1.0;
 
-@mixin responsive-man($property, $xs-value, $sm-value, $md-value, $lg-value){
-		#{$property}: $xs-value;
-
-		/* Small devices (tablets, 768px and up) */
-		@media (min-width:$screen-sm-min) {
+@mixin responsive-man($property, $xs-value, $sm-value, $md-value, $lg-value, $xl-value){
+		@include media-breakpoint-up(xs) {
+			#{$property}: $xs-value;
+		}
+		@include media-breakpoint-up(sm) {
 			#{$property}: $sm-value;
 		}
-
-		/* Medium devices (desktops, 992px and up) */
-		@media (min-width:$screen-md-min) {
+		@include media-breakpoint-up(md) {
 			#{$property}: $md-value;
 		}
-
-		/* Large devices (large desktops, 1200px and up) */
-		@media (min-width:$screen-lg-min) {
+		@include media-breakpoint-up(lg) {
 			#{$property}: $lg-value;
+		}
+		@include media-breakpoint-up(xl) {
+			#{$property}: $xl-value;
 		}
 }
 
 
 @mixin responsive-auto($property, $value){
-	@include responsive-man($property, $value * $xs-reduction, $value * $sm-reduction, $value * $md-reduction, $value * $lg-reduction) 
+	@include responsive-man($property, $value * $xs-reduction, $value * $sm-reduction, $value * $md-reduction, $value * $lg-reduction, $value * $xl-reduction) 
 }
-
-
-/** Quick Mixins for Property size to all below it */
-@mixin x_down($property, $value, $screen-max){
-	/* Only Smallest Devcies */
-	@media (max-width:$screen-max) {
-		#{$property}: $value;
-	}
-}
-
-@mixin xs_down($property, $value){
-	@include x_down($property, $value, $screen-xs-max);
-}
-
-@mixin sm_down($property, $value){
-	@include x_down($property, $value, $screen-sm-max);
-}
-
-@mixin md_down($property, $value){
-	@include x_down($property, $value, $screen-md-max);
-}
-
-@mixin lg_down($property, $value){
-	@include x_down($property, $value, $screen-lg-max);
-}
-/** Quick Mixins for Property size to all below it */
-
-/** Quick Mixins for Property size to all above it */
-@mixin x_up($property, $value, $screen-min){
-	/* Only Smallest Devcies */
-	@media (min-width:$screen-min) {
-		#{$property}: $value;
-	}
-}
-
-@mixin xs_up($property, $value){
-	@include x_up($property, $value, $screen-xs-min);
-}
-
-@mixin sm_up($property, $value){
-	@include x_up($property, $value, $screen-sm-min);
-}
-
-@mixin md_up($property, $value){
-	@include x_up($property, $value, $screen-md-min);
-}
-
-@mixin lg_up($property, $value){
-	@include x_up($property, $value, $screen-lg-min);
-}
-/** Quick Mixins for Property size to all above it */
