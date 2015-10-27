@@ -1,0 +1,20 @@
+footer.site-footer{
+	@extend .container-fluid;
+	background: $josh-light-red;
+	color: white;  
+
+	>div {
+		@extend .row;
+	}
+
+	.twitter-feed{
+		@extend .col-sm-4;
+	}
+	.address{
+		@extend .col-sm-4;
+	}
+	.quotes{
+		@extend .col-sm-4;
+	}
+
+}
