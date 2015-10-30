@@ -1,4 +1,5 @@
 footer.site-footer{
+	display: none; 
 	@extend .container-fluid;
 	background: $josh-light-red;
 	color: white;  
