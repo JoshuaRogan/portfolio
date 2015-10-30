@@ -275,7 +275,7 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-    runSequence('styles', 'scripts', ['fonts', 'images'], 'jekyll', callback);
+    runSequence('styles', 'scripts', ['fonts', 'images'], 'jekyll', 'favicons', callback);
 });
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
@@ -294,7 +294,11 @@ gulp.task('jekyll', function() {
     });
 });
 
-
+gulp.task('favicons', function(){
+    exec('mkdir app/_site/assets/favicons/ && cp -r assets/favicons/* app/_site/assets/favicons/', function(err, stdout, stderr) {
+        browserSync.reload();
+    });
+});
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
 gulp.task('default', ['clean'], function() {
