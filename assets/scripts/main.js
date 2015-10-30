@@ -29,7 +29,7 @@ var portfolio = {
         },
         'jumbo': {
             init: function() {
-                portfolio.helpers.displayquote();
+                portfolio.quotes.loadJumboTron('.jumbotron blockquote');
             },
             finalize: function() {}
         },

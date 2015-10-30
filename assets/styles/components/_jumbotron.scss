@@ -14,10 +14,9 @@
 	blockquote {
 		//Load all quotes only show one
 		&.show {
-			//Added with JS
-			display: block;
+			
 		}
-		display: none;
+		
 		font-weight: 300;
 		@include responsive-man(font-size, 0.75rem, 1.25rem, 1.5rem, 1.75rem, 1.75rem);
 
