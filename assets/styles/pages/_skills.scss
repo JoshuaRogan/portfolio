@@ -20,11 +20,11 @@ body.skills {
 		}
 		section.detailed-skills {
 			@extend .container;
-			
+
 			> header {
 				@extend .row;
 				h2{
-					font-weight: bold; 
+					
 				}
 			}
 			.wrapper {
@@ -42,6 +42,46 @@ body.skills {
 						canvas {
 							
 						}
+					}
+				}
+			}
+		}
+
+		aside.wordbubble{
+			@extend .container;
+			p{
+				@extend .text-center;
+				$base-size: 1vw; 
+				.word{
+					//Font Sizes
+					&.bubble-size-0{
+						font-size: $base-size * 1;
+					}
+					&.bubble-size-1{
+						font-size: $base-size * 2;
+					}
+					&.bubble-size-2{
+						font-size: $base-size * 3;
+					}
+					&.bubble-size-3{
+						font-size: $base-size * 4;
+					}
+					&.bubble-size-4{
+						font-size: $base-size * 5;
+					}
+					
+					//Weights
+					&.weight-0{
+						font-weight: 300;
+					}
+					&.weight-1{
+						font-weight: 400;
+					}
+					&.weight-2{
+						font-weight: 700;
+					}
+					&.weight-3{
+						font-weight: 900;
 					}
 				}
 			}

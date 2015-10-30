@@ -1,5 +1,5 @@
 portfolio.chartjs = {
-    debug: true,
+    debug: false,
     colors: ["#F0575B", "#2C3E50", "#47BA73", "#16B5D8", "#9b59b6", "#f39c12", "#95a5a6", "#e67e22", "#46BFBD"],
     colors_highlight: [],
     options: Chart.defaults.PolarArea, 
