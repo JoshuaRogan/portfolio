@@ -8,6 +8,9 @@ twitter_username: JoshuaRogan
 github_username:  JoshuaRogan
 keep_files: ['assets', '.png']
 
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 # Build settings
 markdown: kramdown
 

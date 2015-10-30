@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "First Code Snippet"
-date:   2015-10-13 02:11:09
+title:  "Second Code Snippet"
+date:   2015-10-13 05:11:09
 categories: codesnippet update
 tags:
  - code
