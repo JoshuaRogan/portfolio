@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html>
-
-  {% include head.html %}
-  <body class="{% if page.page %}{{page.page}}{% else %}default{% endif %} {% if page.jumbotron %}jumbo{% endif %}">
-    <div class="global-wrapper">
-        {% include header.html %}
-
-        {% if page.jumbotron %}
+    {% include head.html %}
+    <body class="{% if page.page %}{{page.page}}{% else %}default{% endif %} {% if page.jumbotron %}jumbo{% endif %}">
+        <div class="global-wrapper">
+            {% include header.html %}
+            {% if page.jumbotron %}
             {% include jumbotron.html %}
-        {% endif %}
-
-        <div class="main-wrapper">
-            {{ content }}
+            {% endif %}
+            <div class="main-wrapper">
+                <main>
+                    {{ content }}
+                </main>
+            </div>
+            {% include footer.html %}
+            {% include scripts.html %}
         </div>
-
-        {% include footer.html %}
-
-        {% include scripts.html %}
-    </div>
-
-  </body>
-
+    </body>
 </html>
