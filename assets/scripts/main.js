@@ -33,7 +33,7 @@ var portfolio = {
             },
             finalize: function() {}
         },
-        'skills':{
+        'portfolio':{
             init: function(){
                 portfolio.chartjs.initSkillsCharts();
                 portfolio.wordbubble.initSkillsWordBubble('.wordbubble');
