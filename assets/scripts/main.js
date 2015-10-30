@@ -17,9 +17,7 @@ var portfolio = {
         // All pages
         'common': {
             init: function() {
-                window.sr = new scrollReveal({
-                    vFactor: 0.3
-                });
+                portfolio.helpers.scrollReveal();
             },
             finalize: function() {
 
@@ -34,6 +32,14 @@ var portfolio = {
                 portfolio.helpers.displayquote();
             },
             finalize: function() {}
+        },
+        'skills':{
+            init: function(){
+                portfolio.chartjs.initSkillsCharts();
+            }, 
+            finalize: function(){
+
+            }
         }
     };
     // The routing fires all common scripts, followed by the page specific scripts.

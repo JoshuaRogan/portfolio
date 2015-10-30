@@ -1,0 +1,50 @@
+/**
+ * Page styling for just the skills page. 
+ *
+ */
+body.skills {
+	main {
+		aside.company-logos {
+			@extend .row;
+
+			figure {
+				@extend .col-md-2, .col-sm-4, .col-xs-6, .text-center;
+
+				.fa {
+					font-size: 5rem;
+				}
+				figcaption {
+					display: none;
+				}
+			}
+		}
+		section.detailed-skills {
+			@extend .container;
+			
+			> header {
+				@extend .row;
+				h2{
+					font-weight: bold; 
+				}
+			}
+			.wrapper {
+				@extend .row;
+				> section {
+					@extend .col-md-4, .col-sm-12;
+
+					h3 {
+					}
+					// JS Charts
+					figure {
+						@extend .text-center;
+						padding-top: 10px;
+
+						canvas {
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}

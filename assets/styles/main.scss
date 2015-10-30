@@ -19,9 +19,11 @@
 @import "layouts/content";
 @import "layouts/header";
 @import "layouts/footer";
+@import "layouts/page";
 
 //Main Components 
 @import "components/jumbotron";
 
 //Page Specific styles 
 @import "pages/home";
+@import "pages/skills";

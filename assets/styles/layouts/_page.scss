@@ -1,0 +1,49 @@
+/**
+ * Default styling for all basic page types 
+ * 
+ */
+body.default-page {
+	main {
+		//First section items (left right alignment)
+		> section:first-of-type > section {
+			@extend .row;
+			align-items: center;
+
+			.image-wrapper {
+				@extend .col-md-4, .center-block;
+
+				img {
+					@extend .center-block, .img-responsive;
+				}
+
+				.fa{
+					@extend .text-center, .center-block;
+					font-size: 10rem;
+				}
+
+				.half{
+					@extend .text-center, .center-block;
+					.fa{
+						font-size: 7.5rem; 
+						display: inline-block;
+					}
+				}
+			}
+			> div {
+				@extend .col-md-8;
+
+				.final {
+					font-size: 0.8rem;
+				}
+			}
+			&:nth-child(odd) {
+				.image-wrapper {
+					@extend .col-md-push-8;
+				}
+				>div {
+					@extend .col-md-pull-4;
+				}
+			}
+		}
+	}
+}

@@ -15,5 +15,19 @@ portfolio.helpers = {
         } else {
             $("head").append($("<link rel='stylesheet' href='" + src + "' type='text/css' media='screen' />"));
         }
+    },
+    /**
+     * Setup Scroll reveal
+     * @return {[type]} [description]
+     */
+    scrollReveal: function(){
+        window.sr = new scrollReveal({
+            vFactor: 0.3
+        });
+
+        //Init main > h1, main > section, etc., nav, footer > div
+        //Remove all data-sr
+        
+         
     }
 };
