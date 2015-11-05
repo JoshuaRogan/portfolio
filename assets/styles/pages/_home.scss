@@ -5,6 +5,31 @@
 
 body.home{
 	main{
-		
+		section > section{
+			@extend .row;
+			align-items: center;
+
+			div.image-wrapper{
+				@extend .col-md-4;
+				
+				img{
+					@extend .img-responsive, .center-block; 
+				}
+			}
+
+			div{
+				@extend .col-md-8;
+			}
+			
+			//Alternate rows switch layout
+			&:nth-child(odd) {
+				.image-wrapper {
+					@extend .col-md-push-8;
+				}
+				>div {
+					@extend .col-md-pull-4;
+				}
+			}
+		}
 	}
 }
