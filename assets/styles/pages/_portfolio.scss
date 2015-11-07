@@ -9,19 +9,20 @@ body.portfolio {
 		//First Section Summary of experience 
 		section.summary {
 			@extend .row;
-			@include center-block;
+			align-items: center;
+			justify-content: center;
+			margin-left: auto; 
+			margin-right: auto;
 			width: 75vw;
-
 
 			> div {
 				@extend .col-xs-12;
 				text-align: center;
-				padding-top: 5vw;
-				padding-bottom: 5vw;
 
 				img{
 					@include img-responsive;
-					@include center-block;
+					margin-left: auto; 
+					margin-right: auto;
 					max-height: 25vw;
 					padding: 1vw 1vw 2.5vw 1vw;
 					@include media-breakpoint-down(xs) {
@@ -29,12 +30,14 @@ body.portfolio {
 					}
 				}
 			}
-			@include media-breakpoint-up(lg){
+			@include media-breakpoint-up(sm){
 				width: 60vw;
 				height: calc(100vh - 54px);
-				> div img{
-					max-height: 30vw;
-					padding: 2.5vw 1vw 5vw 1vw;
+				> div{
+					align-items: center;
+					img{
+						max-height: 30vw;
+					}
 				}
 			}
 			@include media-breakpoint-down(sm) {
@@ -47,13 +50,15 @@ body.portfolio {
 		//Main Projects
 		section.project {
 			@extend .row;
+			overflow: hidden;
 			padding: $padding;
 			align-items: center;
 			text-align: right;
 
 			figure.primary {
 				@extend .col-md-4;
-				@include center-block;
+				margin-left: auto; 
+				margin-right: auto;
 				margin: 0;
 				padding: 0;
 				text-align: center;
@@ -127,8 +132,14 @@ body.portfolio {
 					color: $pqr-orange;
 				}
 
-				h2 a{
-					color: initial;
+				figure.primary{
+					text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
+				}
+			}
+
+			&#tcp{
+				figure, a, .fa, .icon{
+					color: #DC9F2A;
 				}
 
 				figure.primary{
@@ -180,9 +191,10 @@ body.portfolio {
 				text-align: left;
 
 				figure.primary {
-					@include center-block;
-					padding-bottom: 2.5vw;
-					padding-top: 2.5vw;
+					margin-left: auto; 
+					margin-right: auto;
+					padding-bottom: 10vw;
+					padding-top: 10vw;
 
 					span.icon:before{
 						font-size: 40vw;
