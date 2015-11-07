@@ -3,15 +3,16 @@
  *
  */
 body.portfolio {
-	main {
-		$padding: 2.5%;
+	//Vars 
+	$padding: 2.5%; //Layout padding
 
+	main {
 		//First Section Summary of experience 
-		section.summary {
+		section#summary {
 			@extend .row;
 			align-items: center;
 			justify-content: center;
-			margin-left: auto; 
+			margin-left: auto;
 			margin-right: auto;
 			width: 75vw;
 
@@ -19,23 +20,54 @@ body.portfolio {
 				@extend .col-xs-12;
 				text-align: center;
 
-				img{
+				img {
 					@include img-responsive;
-					margin-left: auto; 
+					margin-left: auto;
 					margin-right: auto;
 					max-height: 25vw;
 					padding: 1vw 1vw 2.5vw 1vw;
+
 					@include media-breakpoint-down(xs) {
 						max-height: 40vw;
 					}
 				}
+				nav {
+					ul {
+						@extend .list-inline, .list-unstyled;
+						margin-left: auto;
+						margin-right: auto;
+						text-align: center;
+
+						li {
+							padding-right: 0;
+							padding-left: 0;
+
+							&:after {
+								content: '\f111';
+								font-family: 'FontAwesome';
+								font-size: 5px;
+								vertical-align: middle;
+								padding-left: 7.5px;
+								padding-right: 2.5px
+							}
+							&:last-of-type:after {
+								content: none;
+							}
+							&:first-of-type {
+								padding-left: 5px;
+							}
+						}
+					}
+				}
 			}
-			@include media-breakpoint-up(sm){
+			@include media-breakpoint-up(sm) {
 				width: 60vw;
 				height: calc(100vh - 54px);
-				> div{
+
+				> div {
 					align-items: center;
-					img{
+
+					img {
 						max-height: 30vw;
 					}
 				}
@@ -47,172 +79,231 @@ body.portfolio {
 				width: 90vw;
 			}
 		}
-		//Main Projects
-		section.project {
-			@extend .row;
-			overflow: hidden;
-			padding: $padding;
-			align-items: center;
-			text-align: right;
-
-			figure.primary {
-				@extend .col-md-4;
-				margin-left: auto; 
-				margin-right: auto;
-				margin: 0;
-				padding: 0;
-				text-align: center;
-
-				span.icon:before {
-					font-size: 25vw;
-				}
-			}
-			> div {
-				@extend .col-md-8;
-
-				h2 {
-					a{
-						color: white;
-						&:hover{
-							// text-decoration: none;
-							// Have nicer animated underline 
-						}
-					}
-					margin-bottom: 0;
-				}
-				figure.tools {
-					ul {
-						@extend .list-unstyled, .list-inline;
-						li{
-							padding-right: 0;
-							padding-left: 0; 
-
-							&:after{
-								content: '\f111';
-								font-family: 'FontAwesome';
-								font-size: 5px;
-								vertical-align: middle; 
-								padding-left: 7.5px;
-								padding-right: 2.5px
-							}
-
-							&:last-of-type:after{
-								content: none;
-							}
-							&:first-of-type{
-								padding-left: 5px; 
-							}
-						}
-					}
-				}
-				figure.links {
-					ul {
-						@extend .list-unstyled, .list-inline;
-
-						li {
-							.fa {
-								font-size: 5vw;
-							}
-							.icon:before {
-								font-size: 5vw;
-								top: 5px;
-								//Fix alignment with font awesome icons 
-								position: relative;
-							}
-						}
-					}
-				}
-			}
-			&#genetics {
-
-			}
-
-			&#pqr{
-				figure, a, .fa, .icon{
-					color: $pqr-orange;
-				}
-
-				figure.primary{
-					text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
-				}
-			}
-
-			&#tcp{
-				figure, a, .fa, .icon{
-					color: #DC9F2A;
-				}
-
-				figure.primary{
-					text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
-				}
-			}
-
-			&:nth-child(even) {
-				background-color: $brand-primary;
-				color: white;
-				text-align: left;
+		section#projects {
+			//Main Projects
+			section.project {
+				@extend .row;
+				overflow: hidden;
+				padding: $padding;
+				align-items: center;
+				text-align: right;
 
 				figure.primary {
-					@extend .col-md-push-8;
-					text-shadow: 10px 3px 3px rgba(0, 0, 0, 0.15);
+					@extend .col-md-4;
+					margin-left: auto;
+					margin-right: auto;
+					margin: 0;
+					padding: 0;
+					text-align: center;
+
+					span.icon:before {
+						font-size: 25vw;
+					}
 				}
 				> div {
-					@extend .col-md-pull-4;
+					@extend .col-md-8;
 
-					figure.tools, figure.links {
+					h2 {
+						a {
+							color: white;
+
+							&:hover {
+								// text-decoration: none;
+								// Have nicer animated underline
+							}
+						}
+						margin-bottom: 0;
+					}
+					figure.tools {
 						ul {
+							@extend .list-unstyled, .list-inline;
+
 							li {
-								a {
-									color: white;
+								padding-right: 0;
+								padding-left: 0;
+
+								&:after {
+									content: '\f111';
+									font-family: 'FontAwesome';
+									font-size: 5px;
+									vertical-align: middle;
+									padding-left: 7.5px;
+									padding-right: 2.5px
+								}
+								&:last-of-type:after {
+									content: none;
+								}
+								&:first-of-type {
+									padding-left: 5px;
+								}
+							}
+						}
+					}
+					figure.links {
+						ul {
+							@extend .list-unstyled, .list-inline;
+
+							li {
+								.fa {
+									font-size: 5vw;
+								}
+								.icon:before {
+									font-size: 5vw;
+									top: 5px;
+									//Fix alignment with font awesome icons 
+									position: relative;
 								}
 							}
 						}
 					}
 				}
-			}
-			@include media-breakpoint-up(xl) {
-				padding: $padding * 1.5;
+				&#genetics {
+				}
+				&#pqr {
+					figure, a, .fa, .icon {
+						color: $pqr-orange;
+					}
+					figure.primary {
+						text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
+					}
+				}
+				&#tcp {
+					figure, a, .fa, .icon {
+						color: #DC9F2A;
+					}
+					figure.primary {
+						text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
+					}
+				}
+				&#sandhogs {
+					figure, a, .fa, .icon {
+						color: #e26e45;
+					}
+					figure.primary {
+						text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
+					}
+				}
+				&:nth-child(odd) {
+					background-color: $brand-primary;
+					color: white;
+					text-align: left;
 
-				figure.tools, figure.links {
-					ul li a {
-						.icon:before, .fa:before {
-							font-size: 3vw;
+					figure.primary {
+						@extend .col-md-push-8;
+						text-shadow: 10px 3px 3px rgba(0, 0, 0, 0.15);
+					}
+					> div {
+						@extend .col-md-pull-4;
+
+						figure.tools, figure.links {
+							ul {
+								li {
+									a {
+										color: white;
+									}
+								}
+							}
 						}
 					}
 				}
+				@include media-breakpoint-up(xl) {
+					padding: $padding * 1.5;
 
-				figure.primary{
-					span.icon:before{
-						font-size: 20vw;
+					figure.tools, figure.links {
+						ul li a {
+							.icon:before, .fa:before {
+								font-size: 3vw;
+							}
+						}
 					}
-				}
-			}
-			@include media-breakpoint-down(sm) {
-				text-align: left;
-
-				figure.primary {
-					margin-left: auto; 
-					margin-right: auto;
-					padding-bottom: 10vw;
-					padding-top: 10vw;
-
-					span.icon:before{
-						font-size: 40vw;
-					}
-				}
-				
-				figure.tools, figure.links {
-					ul li a {
-						.icon:before, .fa:before {
-							font-size: 8vw;
+					figure.primary {
+						span.icon:before {
+							font-size: 20vw;
 						}
 					}
 				}
+				@include media-breakpoint-down(sm) {
+					text-align: left;
 
+					figure.primary {
+						margin-left: auto;
+						margin-right: auto;
+						padding-bottom: 10vw;
+						padding-top: 10vw;
+
+						span.icon:before {
+							font-size: 40vw;
+						}
+					}
+					figure.tools, figure.links {
+						ul li a {
+							.icon:before, .fa:before {
+								font-size: 8vw;
+							}
+						}
+					}
+				}
 			}
 		}
 		//Rest of the projects
-		section.allprojects {
+		section#all-projects {
+			padding: $padding;
+			h2{
+				text-align: center;
+				padding-bottom: 1rem;
+			}
+
+			section.projects {
+				display: flex;
+				// align-items: flex-start;
+				// align-content: flex-start;
+    			justify-content: space-around;
+    			flex-wrap: wrap;
+
+				section.project{
+					@extend .card;
+					display: inline-flex;
+					@include responsive-man(width, 100%, 100%, 50%, 50%, 33%);
+					
+    				img{
+						@include img-responsive;
+						object-fit: cover;
+    				}
+					
+					//All Direct Divs are card blocks
+    				> div:not(.footer){
+						@extend .card-block;
+						> h3{
+							@extend .card-title, .h4;
+						}
+
+						> p{
+							 @extend .card-text;
+						}	
+    				}
+
+    				div.footer{
+    					@extend .card-footer;   					
+
+    					ul{
+    						@extend .list-unstyled, .list-inline;
+    						display: flex;
+    						align-items: center;
+    						align-content: space-around;
+    						justify-content: space-around;
+    						flex-wrap: wrap;
+    						margin-bottom: 0;
+
+
+    						li{
+    							display: flex;
+    						}
+    					}
+    				}
+
+
+				}
+			}
 		}
 		//Word Bubble at bottom
 		section.wordbubble {
