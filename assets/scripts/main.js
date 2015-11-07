@@ -17,10 +17,10 @@ var portfolio = {
         // All pages
         'common': {
             init: function() {
-                portfolio.helpers.scrollReveal();
+                // portfolio.helpers.scrollReveal();
             },
             finalize: function() {
-
+                portfolio.helpers.scrollReveal();
             }
         },
         'home': {
@@ -35,8 +35,7 @@ var portfolio = {
         },
         'portfolio':{
             init: function(){
-                portfolio.chartjs.initSkillsCharts();
-                portfolio.wordbubble.initSkillsWordBubble('.wordbubble');
+                portfolio.wordbubble.initSkillsWordBubble('#wordbubble section');
             }, 
             finalize: function(){
 

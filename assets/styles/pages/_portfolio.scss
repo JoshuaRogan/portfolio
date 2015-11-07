@@ -306,7 +306,65 @@ body.portfolio {
 			}
 		}
 		//Word Bubble at bottom
-		section.wordbubble {
+		section#wordbubble {
+			@include make-row;
+			align-items: center;
+  			justify-content: center;
+
+			background-color: $brand-primary; 
+			h2{
+				color: white;
+				width: 100vw;
+				text-align: center;
+				padding: 2.5%;
+				margin-bottom: 0;
+				display: none;
+			}
+			p{
+				color: white;
+				text-align: center;
+				//  
+				// 
+				perspective: 1000px;
+				width: 85vw;
+				padding: 1vw 2.5vw 1vw;
+				margin-left: auto;
+				margin-right: auto;
+				// 
+				$base-size: 1vw;
+				.word{
+					//Font Sizes
+					&.bubble-size-0{
+						font-size: $base-size * 1;
+					}
+					&.bubble-size-1{
+						font-size: $base-size * 2;
+					}
+					&.bubble-size-2{
+						font-size: $base-size * 3;
+					}
+					&.bubble-size-3{
+						font-size: $base-size * 4;
+					}
+					&.bubble-size-4{
+						font-size: $base-size * 5;
+					}
+					
+					//Weights
+					&.weight-0{
+						font-weight: 300;
+					}
+					&.weight-1{
+						font-weight: 400;
+					}
+					&.weight-2{
+						font-weight: 700;
+					}
+					&.weight-3{
+						font-weight: 900;
+					}
+				}
+			}
 		}
 	}
 }

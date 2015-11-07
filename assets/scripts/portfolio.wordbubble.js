@@ -4,6 +4,7 @@ portfolio.wordbubble = {
 		fontweights: [300,400,700,900],
 		fontsizes: [],
 		numClasses: 10, 
+		scrollReveal: "wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg"
 	},
 	//Weight words between 1-10
 	skills_words: [
@@ -13,7 +14,6 @@ portfolio.wordbubble = {
 		{word: "Gulp", weight: 9},
 		{word: "Grunt", weight: 9},
 		{word: "Capistrano", weight: 8},
-		{word: "Dev Tools", weight: 5},
 		{word: "Modernizr", weight: 5},
 		{word: "Google App Engine", weight: 6},
 		{word: "Laravel", weight: 7},
@@ -68,12 +68,12 @@ portfolio.wordbubble = {
 		$.each(html_data, function(index, data){
 			sizeClass = "bubble-size-" + data.class; 
 			weightClass = "weight-" + data.weight; 
-			html += "<span class='word " + sizeClass + " " + weightClass + "'>";
+			html += "<span data-sr='" + portfolio.wordbubble.defaults.scrollReveal + "' class='word " + sizeClass + " " + weightClass + "'>";
 			html += data.word; 
 			html += "</span> ";
 		});
 		html += "</p>"; 
-
 		return html;
+
 	}
 };
