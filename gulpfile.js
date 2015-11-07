@@ -248,18 +248,18 @@ gulp.task('images', function() {
         //     console.log(this);
         // })
         //Compress each image
-        .pipe(imagemin({
-            progressive: true,
-            interlaced: true,
-            svgoPlugins: [{
-                removeUnknownsAndDefaults: false
-            }, {
-                cleanupIDs: false
-            }],
-            use: [imageminJpegRecompress({
-                loops: 3
-            })]
-        }))
+        // .pipe(imagemin({
+        //     progressive: true,
+        //     interlaced: true,
+        //     svgoPlugins: [{
+        //         removeUnknownsAndDefaults: false
+        //     }, {
+        //         cleanupIDs: false
+        //     }],
+        //     use: [imageminJpegRecompress({
+        //         loops: 3
+        //     })]
+        // }))
         .pipe(gulp.dest(path.dist + 'images'))
         .pipe(browserSync.stream());
 });
