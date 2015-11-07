@@ -9,6 +9,7 @@
     url("../fonts/portfolio-icons.svg#portfolio-icons") format("svg");
   font-weight: normal;
   font-style: normal;
+
 }
 
 [data-icon]:before {
@@ -48,4 +49,13 @@
 }
 .icon-atom27:before {
   content: "d";
+}
+.icon-eye106:before {
+  content: "e";
+}
+.icon-web58:before {
+  content: "f";
+}
+.icon-touch18:before {
+  content: "g";
 }

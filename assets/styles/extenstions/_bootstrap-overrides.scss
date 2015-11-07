@@ -1,5 +1,14 @@
-//Variable Overrides 
-$enable-flex: true;
+//----------------------
+//
+//	Opt In Modules
+//
+//---------------------- 
+$enable-flex:               true;
+$enable-rounded:            false;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true;
+
 //----------------------
 //
 //	Colors
@@ -7,14 +16,6 @@ $enable-flex: true;
 //---------------------- 
 $brand-primary: $josh-dark-blue;
 $brand-success: $josh-light-red;
-//----------------------
-//
-//	Borders
-//
-//---------------------- 
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
 
 //----------------------
 //

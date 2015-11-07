@@ -191,43 +191,62 @@ gulp.task('fonts', function() {
 // responsive
 gulp.task('images', function() {
     return gulp.src(globs.images)
-        //Create multiple responsive images
-        .pipe(responsive({
-            '**': [{
-                width: '100%',
-                withoutEnlargement: true
-            }, {
-                width: 3000,
-                withoutEnlargement: true,
-                rename: {
-                    suffix: "-xl"
-                }
-            }, {
-                width: 1500,
-                withoutEnlargement: true,
-                rename: {
-                    suffix: "-lg"
-                }
-            }, {
-                width: 1000,
-                withoutEnlargement: true,
-                rename: {
-                    suffix: "-md"
-                }
-            }, {
-                width: 800,
-                withoutEnlargement: true,
-                rename: {
-                    suffix: "-sm"
-                }
-            }, {
-                width: 350,
-                withoutEnlargement: true,
-                rename: {
-                    suffix: "-xs"
-                }
-            }]
-        }))
+        // .pipe(responsive({
+        //     '**/*.png': [
+        //     {
+        //         width: '100%',
+        //         passThroughUnused: true,
+        //         errorOnUnusedImage: false,
+        //     }, 
+        //     {
+        //         width: 3000,
+        //         passThroughUnused: true,
+        //         errorOnUnusedImage: false,
+        //         rename: {
+        //             suffix: "-xl"
+        //         }
+        //     }, 
+        //     {
+        //         width: 1500,
+        //         passThroughUnused: true,
+        //         errorOnUnusedImage: false,
+        //         rename: {
+        //             suffix: "-lg"
+        //         }
+        //     }, 
+        //     {
+        //         width: 1000,
+        //         passThroughUnused: true,
+        //         errorOnUnusedImage: false,
+        //         rename: {
+        //             suffix: "-md"
+        //         }
+        //     }, 
+        //     {
+        //         width: 800,
+        //         passThroughUnused: true,
+        //         errorOnUnusedImage: false,
+        //         rename: {
+        //             suffix: "-sm"
+        //         }
+        //     }, 
+        //     {
+        //         width: 350,
+        //         passThroughUnused: true,
+        //         errorOnUnusedImage: false,
+        //         rename: {
+        //             suffix: "-xs"
+        //         }
+        //     }]
+        // },{
+        //     passThroughUnused: true,
+        //     errorOnUnusedImage: false, 
+        //     withoutEnlargement: true,
+        //     errorOnUnusedConfig: false
+        // }))
+        // .on('end', function(){
+        //     console.log(this);
+        // })
         //Compress each image
         .pipe(imagemin({
             progressive: true,
@@ -240,7 +259,9 @@ gulp.task('images', function() {
             use: [imageminJpegRecompress({
                 loops: 3
             })]
-        })).pipe(gulp.dest(path.dist + 'images')).pipe(browserSync.stream());
+        }))
+        .pipe(gulp.dest(path.dist + 'images'))
+        .pipe(browserSync.stream());
 });
 // ### JSHint
 // `gulp jshint` - Lints configuration JSON and project JS.

@@ -9,7 +9,7 @@ github_username:  JoshuaRogan
 keep_files: ['assets', '.png']
 
 paginate: 5
-paginate_path: "/blog/page:num/"
+paginate_path: "/blog/:num/"
 
 # Build settings
 markdown: kramdown

@@ -1,0 +1,209 @@
+/**
+ * Page styling for the primary portfolio page
+ *
+ */
+body.portfolio {
+	main {
+		$padding: 2.5%;
+
+		//First Section Summary of experience 
+		section.summary {
+			@extend .row;
+			@include center-block;
+			width: 75vw;
+
+
+			> div {
+				@extend .col-xs-12;
+				text-align: center;
+				padding-top: 5vw;
+				padding-bottom: 5vw;
+
+				img{
+					@include img-responsive;
+					@include center-block;
+					max-height: 25vw;
+					padding: 1vw 1vw 2.5vw 1vw;
+					@include media-breakpoint-down(xs) {
+						max-height: 40vw;
+					}
+				}
+			}
+			@include media-breakpoint-up(lg){
+				width: 60vw;
+				height: calc(100vh - 54px);
+				> div img{
+					max-height: 30vw;
+					padding: 2.5vw 1vw 5vw 1vw;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				width: 80vw;
+			}
+			@include media-breakpoint-down(xs) {
+				width: 90vw;
+			}
+		}
+		//Main Projects
+		section.project {
+			@extend .row;
+			padding: $padding;
+			align-items: center;
+			text-align: right;
+
+			figure.primary {
+				@extend .col-md-4;
+				@include center-block;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+
+				span.icon:before {
+					font-size: 25vw;
+				}
+			}
+			> div {
+				@extend .col-md-8;
+
+				h2 {
+					a{
+						color: white;
+						&:hover{
+							// text-decoration: none;
+							// Have nicer animated underline 
+						}
+					}
+					margin-bottom: 0;
+				}
+				figure.tools {
+					ul {
+						@extend .list-unstyled, .list-inline;
+						li{
+							padding-right: 0;
+							padding-left: 0; 
+
+							&:after{
+								content: '\f111';
+								font-family: 'FontAwesome';
+								font-size: 5px;
+								vertical-align: middle; 
+								padding-left: 7.5px;
+								padding-right: 2.5px
+							}
+
+							&:last-of-type:after{
+								content: none;
+							}
+							&:first-of-type{
+								padding-left: 5px; 
+							}
+						}
+					}
+				}
+				figure.links {
+					ul {
+						@extend .list-unstyled, .list-inline;
+
+						li {
+							.fa {
+								font-size: 5vw;
+							}
+							.icon:before {
+								font-size: 5vw;
+								top: 5px;
+								//Fix alignment with font awesome icons 
+								position: relative;
+							}
+						}
+					}
+				}
+			}
+			&#genetics {
+
+			}
+
+			&#pqr{
+				figure, a, .fa, .icon{
+					color: $pqr-orange;
+				}
+
+				h2 a{
+					color: initial;
+				}
+
+				figure.primary{
+					text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
+				}
+			}
+
+			&:nth-child(even) {
+				background-color: $brand-primary;
+				color: white;
+				text-align: left;
+
+				figure.primary {
+					@extend .col-md-push-8;
+					text-shadow: 10px 3px 3px rgba(0, 0, 0, 0.15);
+				}
+				> div {
+					@extend .col-md-pull-4;
+
+					figure.tools, figure.links {
+						ul {
+							li {
+								a {
+									color: white;
+								}
+							}
+						}
+					}
+				}
+			}
+			@include media-breakpoint-up(xl) {
+				padding: $padding * 1.5;
+
+				figure.tools, figure.links {
+					ul li a {
+						.icon:before, .fa:before {
+							font-size: 3vw;
+						}
+					}
+				}
+
+				figure.primary{
+					span.icon:before{
+						font-size: 20vw;
+					}
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				text-align: left;
+
+				figure.primary {
+					@include center-block;
+					padding-bottom: 2.5vw;
+					padding-top: 2.5vw;
+
+					span.icon:before{
+						font-size: 40vw;
+					}
+				}
+				
+				figure.tools, figure.links {
+					ul li a {
+						.icon:before, .fa:before {
+							font-size: 8vw;
+						}
+					}
+				}
+
+			}
+		}
+		//Rest of the projects
+		section.allprojects {
+		}
+		//Word Bubble at bottom
+		section.wordbubble {
+		}
+	}
+}
