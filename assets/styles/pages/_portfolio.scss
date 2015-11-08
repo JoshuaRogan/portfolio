@@ -53,6 +53,27 @@ body.portfolio {
 			}
 		}
 	}
+	@mixin ul-dots() {
+		li {
+			padding-right: 0;
+			padding-left: 0;
+
+			&:after {
+				content: '\f111';
+				font-family: 'FontAwesome';
+				font-size: 5px;
+				vertical-align: middle;
+				padding-left: 7.5px;
+				padding-right: 2.5px
+			}
+			&:last-of-type:after {
+				content: none;
+			}
+			&:first-of-type {
+				padding-left: 5px;
+			}
+		}
+	}
 	main {
 		//First Section Summary of experience 
 		section#summary {
@@ -81,29 +102,11 @@ body.portfolio {
 				nav {
 					ul {
 						@extend .list-inline, .list-unstyled;
+						@include ul-dots;
 						margin-left: auto;
 						margin-right: auto;
 						text-align: center;
 
-						li {
-							padding-right: 0;
-							padding-left: 0;
-
-							&:after {
-								content: '\f111';
-								font-family: 'FontAwesome';
-								font-size: 5px;
-								vertical-align: middle;
-								padding-left: 7.5px;
-								padding-right: 2.5px
-							}
-							&:last-of-type:after {
-								content: none;
-							}
-							&:first-of-type {
-								padding-left: 5px;
-							}
-						}
 					}
 				}
 			}
@@ -127,7 +130,7 @@ body.portfolio {
 			}
 		}
 		section#projects {
-			h2.projects-title{
+			h2.projects-title {
 				text-align: center;
 				padding-top: $padding;
 				padding-bottom: $padding;
@@ -443,7 +446,7 @@ body.portfolio {
 				}
 			}
 			> section#skill-developing {
-				> section.summary, > section#developing-philosophy > div{
+				> section.summary, > section#developing-philosophy > div {
 					@include center-layout;
 					text-align: center;
 					padding-top: $padding;
@@ -462,7 +465,7 @@ body.portfolio {
 						@extend .col-md-5;
 					}
 				}
-				> section#developing-web{
+				> section#developing-web {
 					@include make-row;
 					@include alt-layout-dev;
 					align-items: center;
@@ -531,17 +534,16 @@ body.portfolio {
 						@include logo-grid;
 					}
 				}
-
 				> section#developing-sysadmin {
 					@include make-row;
 					padding: $padding;
 					align-items: center;
 					justify-content: space-around;
 					text-align: right;
+
 					@include media-breakpoint-down(sm) {
 						text-align: left;
 					}
-
 					> div {
 						@extend .col-md-7;
 						@extend .col-md-push-5;
@@ -550,13 +552,22 @@ body.portfolio {
 						@extend .col-md-5;
 						@extend .col-md-pull-7;
 						@include logo-grid;
-						> ul{
-							li{
+
+						> ul {
+							li {
 								@include responsive-man(max-width, 20%, 20%, 33%, 25%, 25%);
 							}
 						}
 					}
 				}
+			}
+		}
+		nav.footer {
+			text-align: center;
+
+			ul {
+				@extend .list-unstyled, .list-inline;
+				@include ul-dots;
 			}
 		}
 	}
