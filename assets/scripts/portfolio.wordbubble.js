@@ -38,12 +38,18 @@ portfolio.wordbubble = {
 		{word: "Git", weight: 8},
 		{word: "Basecamp", weight: 7},
 		{word: "Bootstrap", weight: 8},
-		{word: "Foundation", weight: 7}
+		{word: "Foundation", weight: 7},
+		{word: "GIMP", weight: 7},
+		{word: "Inkscape", weight: 7},
+		{word: "Functional Programming", weight: 7},
+		{word: "OOP", weight: 7},
+		{word: "Agile", weight: 7},
 	],
 	initSkillsWordBubble: function(selector){
 		var element = $(selector); 
 		if(element.length){
 			var html = this.createWordBubble(this.skills_words, this.defaults.fontweights);
+			console.log(html);
 			$(element).html(html);
 		}
 		else{
