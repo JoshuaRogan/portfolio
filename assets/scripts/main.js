@@ -36,6 +36,7 @@ var portfolio = {
         'portfolio':{
             init: function(){
                 portfolio.wordbubble.initSkillsWordBubble('#wordbubble section');
+                portfolio.chartjs.initSkillsCharts();
             }, 
             finalize: function(){
 

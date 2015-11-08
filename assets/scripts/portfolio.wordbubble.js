@@ -45,17 +45,29 @@ portfolio.wordbubble = {
 		{word: "OOP", weight: 7},
 		{word: "Agile", weight: 7},
 	],
+	tools_words: [
+		{word: "Git", weight: 10},
+		{word: "Gulp", weight: 9},
+		{word: "Grunt", weight: 9},
+		{word: "Bash", weight: 7},
+		{word: "Sublime", weight: 9},
+		{word: "Bower", weight: 8},
+	],
+	initToolsWordBubble: function(selector){
+		this.initWordBubble(selector, this.tools_words);
+	},
 	initSkillsWordBubble: function(selector){
+		this.initWordBubble(selector, this.skills_words);
+	},
+	initWordBubble: function(selector, words){
 		var element = $(selector); 
 		if(element.length){
-			var html = this.createWordBubble(this.skills_words, this.defaults.fontweights);
-			console.log(html);
+			var html = this.createWordBubble(words, this.defaults.fontweights);
 			$(element).html(html);
 		}
 		else{
 			if(this.debug) console.log("Bad selector");
 		}
-		
 	},
 	createWordBubble: function(words, fontweights){
 		//Create five classes based on the weights

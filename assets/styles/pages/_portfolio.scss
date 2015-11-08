@@ -4,8 +4,55 @@
  */
 body.portfolio {
 	//Vars 
-	$padding: 2.5%; //Layout padding
+	$padding: 2.5%;
 
+	//Mixins
+	@mixin alt-layout-dev() {
+		background-color: $brand-primary;
+		color: white;
+
+		a {
+			color: white;
+		}
+		figure.chart-js {
+			canvas {
+			}
+			.legend {
+				ul {
+					background-color: rgba(255, 255, 255, 1);
+					box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.15);
+					border: 1px solid $brand-primary;
+					border-radius: 4px;
+
+					li {
+					}
+				}
+			}
+		}
+	}
+	@mixin logo-grid() {
+		ul {
+			@extend .list-unstyled;
+			display: flex;
+			text-align: center;
+			align-items: center;
+			align-content: center;
+			flex-flow: row wrap;
+			justify-content: space-around;
+
+			li {
+				@include responsive-man(max-width, 15%, 15%, 33%, 25%, 20%);
+				padding: 2.5%;
+
+				a {
+					img {
+						@extend .img-responsive;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 	main {
 		//First Section Summary of experience 
 		section#summary {
@@ -248,60 +295,55 @@ body.portfolio {
 		//Rest of the projects
 		section#all-projects {
 			padding: $padding;
-			h2{
+
+			h2 {
 				text-align: center;
 				padding-bottom: 1rem;
 			}
-
 			section.projects {
 				display: flex;
 				// align-items: flex-start;
 				// align-content: flex-start;
-    			justify-content: space-around;
-    			flex-wrap: wrap;
+				justify-content: space-around;
+				flex-wrap: wrap;
 
-				section.project{
+				section.project {
 					@extend .card;
 					display: inline-flex;
 					@include responsive-man(width, 100%, 100%, 50%, 50%, 33%);
-					
-    				img{
+
+					img {
 						@include img-responsive;
 						object-fit: cover;
-    				}
-					
+					}
 					//All Direct Divs are card blocks
-    				> div:not(.footer){
+					> div:not(.footer) {
 						@extend .card-block;
-						> h3{
+
+						> h3 {
 							@extend .card-title, .h4;
 						}
+						> p {
+							@extend .card-text;
+						}
+					}
+					div.footer {
+						@extend .card-footer;
 
-						> p{
-							 @extend .card-text;
-						}	
-    				}
+						ul {
+							@extend .list-unstyled, .list-inline;
+							display: flex;
+							align-items: center;
+							align-content: space-around;
+							justify-content: space-around;
+							flex-wrap: wrap;
+							margin-bottom: 0;
 
-    				div.footer{
-    					@extend .card-footer;   					
-
-    					ul{
-    						@extend .list-unstyled, .list-inline;
-    						display: flex;
-    						align-items: center;
-    						align-content: space-around;
-    						justify-content: space-around;
-    						flex-wrap: wrap;
-    						margin-bottom: 0;
-
-
-    						li{
-    							display: flex;
-    						}
-    					}
-    				}
-
-
+							li {
+								display: flex;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -309,10 +351,10 @@ body.portfolio {
 		section#wordbubble {
 			@include make-row;
 			align-items: center;
-  			justify-content: center;
+			justify-content: center;
+			background-color: $brand-primary;
 
-			background-color: $brand-primary; 
-			h2{
+			h2 {
 				color: white;
 				width: 100vw;
 				text-align: center;
@@ -320,7 +362,7 @@ body.portfolio {
 				margin-bottom: 0;
 				display: none;
 			}
-			p{
+			p {
 				color: white;
 				text-align: center;
 				//  
@@ -332,36 +374,169 @@ body.portfolio {
 				margin-right: auto;
 				// 
 				$base-size: 1vw;
-				.word{
+
+				.word {
 					//Font Sizes
-					&.bubble-size-0{
+					&.bubble-size-0 {
 						font-size: $base-size * 1;
 					}
-					&.bubble-size-1{
+					&.bubble-size-1 {
 						font-size: $base-size * 2;
 					}
-					&.bubble-size-2{
+					&.bubble-size-2 {
 						font-size: $base-size * 3;
 					}
-					&.bubble-size-3{
+					&.bubble-size-3 {
 						font-size: $base-size * 4;
 					}
-					&.bubble-size-4{
+					&.bubble-size-4 {
 						font-size: $base-size * 5;
 					}
-					
 					//Weights
-					&.weight-0{
+					&.weight-0 {
 						font-weight: 300;
 					}
-					&.weight-1{
+					&.weight-1 {
 						font-weight: 400;
 					}
-					&.weight-2{
+					&.weight-2 {
 						font-weight: 700;
 					}
-					&.weight-3{
+					&.weight-3 {
 						font-weight: 900;
+					}
+				}
+			}
+		}
+		section#professional-skills {
+			h2 {
+				text-align: center;
+			}
+			> section {
+				//Chart JS & Legend
+				figure.chart-js {
+					margin: 0;
+					margin-left: auto;
+					margin-right: auto;
+					align-items: center;
+					justify-content: center;
+
+					canvas {
+						max-width: 100%;
+					}
+					.legend {
+						@include responsive-man(width, 100%, 100%, 75%, 60%, 60%);
+						padding-top: 10px;
+						text-align: center;
+						margin-left: auto;
+						margin-right: auto;
+
+						ul {
+							padding: 10px;
+						}
+					}
+				}
+			}
+			> section#skill-developing {
+				> section.summary, > section#developing-philosophy {
+					@include center-layout;
+					text-align: center;
+					padding-top: $padding;
+					padding-bottom: $padding;
+				}
+				> section#developing-languages {
+					@include make-row;
+					@include alt-layout-dev;
+					align-items: center;
+					padding: $padding;
+
+					> div {
+						@extend .col-md-7;
+					}
+					> figure {
+						@extend .col-md-5;
+					}
+				}
+				> section#developing-frameworks {
+					@include make-row;
+					padding: $padding;
+					align-items: center;
+					justify-content: space-around;
+
+					> div {
+						@extend .col-md-7, .col-md-push-5;
+						text-align: right;
+
+						@include media-breakpoint-down(sm) {
+							text-align: left;
+						}
+					}
+					> figure.framework-logos {
+						@extend .col-md-5, .col-md-pull-7;
+
+						//Bunch of logos
+						ul {
+							@extend .list-unstyled;
+							display: flex;
+							text-align: center;
+							align-items: center;
+							align-content: center;
+							flex-flow: row wrap;
+							justify-content: space-around;
+
+							li {
+								flex-basis: 50%;
+								@include responsive-man(max-width, 15vw, 15vw, 15vw, 10vw, 10vw);
+
+								a {
+									img {
+										@extend .img-responsive;
+										width: 100%;
+									}
+								}
+							}
+						}
+					}
+				}
+				> section#developing-tools {
+					@include make-row;
+					@include alt-layout-dev;
+					padding: $padding;
+					align-items: center;
+					justify-content: space-around;
+
+					> div {
+						@extend .col-md-6;
+					}
+					> figure.tools {
+						@extend .col-md-6;
+						@include logo-grid;
+					}
+				}
+
+				> section#developing-sysadmin {
+					@include make-row;
+					padding: $padding;
+					align-items: center;
+					justify-content: space-around;
+					text-align: right;
+					@include media-breakpoint-down(sm) {
+						text-align: left;
+					}
+
+					> div {
+						@extend .col-md-7;
+						@extend .col-md-push-5;
+					}
+					> figure {
+						@extend .col-md-5;
+						@extend .col-md-pull-7;
+						@include logo-grid;
+						> ul{
+							li{
+								@include responsive-man(max-width, 20%, 20%, 33%, 25%, 25%);
+							}
+						}
 					}
 				}
 			}

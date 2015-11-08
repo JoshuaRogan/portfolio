@@ -2,3 +2,22 @@
 .qhide{
 	display: none; 
 }
+
+@mixin center-layout(){
+	@include make-row;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75vw;
+
+	@include media-breakpoint-up(sm) {
+		width: 60vw;
+	}
+	@include media-breakpoint-down(sm) {
+		width: 80vw;
+	}
+	@include media-breakpoint-down(xs) {
+		width: 90vw;
+	}
+}
