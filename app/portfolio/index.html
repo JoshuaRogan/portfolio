@@ -23,6 +23,7 @@ excerpt: > #
     </section>
     
     <section id='projects'>
+        <h2 class='projects-title'>Selected Works</h2>
         <section class='project' id='genetics'>
             <figure class='primary' data-sr="enter right, hustle 250px, vFactor 0.75">
                 <span class="icon icon-dna16"></span>
@@ -270,7 +271,7 @@ excerpt: > #
 
     </section>
     
-    <!-- Make this a seperate page too -->
+    <!-- Make this a separate page too -->
     <section id="professional-skills">
         <h2>Professional Skills</h2>
 
@@ -292,6 +293,18 @@ excerpt: > #
                 <figure class='chart-js' data-sr>
                     <!-- Radar Chart with Chart JS -->
                     <canvas id="language-chart"></canvas>
+                    <div class="legend"></div>
+                </figure>
+            </section>
+
+            <section id='developing-web' data-sr hidden>
+                <div>
+                    <h3>Web Development</h3>
+                    <p>Chia post-ironic venmo 3 wolf moon squid, four dollar toast try-hard health goth brooklyn ennui umami meditation master cleanse helvetica. Retro williamsburg occupy, thundercats post-ironic mixtape before they sold out +1 ennui. Readymade retro small batch, master cleanse twee cardigan pickled VHS before they sold out letterpress actually normcore.</p>
+                </div>
+
+                <figure class='chart-js'>
+                    <canvas id="web-chart"></canvas>
                     <div class="legend"></div>
                 </figure>
             </section>
@@ -367,31 +380,18 @@ excerpt: > #
             </section>  
             
             <section id='developing-philosophy' data-sr>
-                <h3>Philosophy</h3>
-                <p>Chia post-ironic venmo 3 wolf moon squid, four dollar toast try-hard health goth brooklyn ennui umami meditation master cleanse helvetica. Retro williamsburg occupy, thundercats post-ironic mixtape before they sold out +1 ennui. Readymade retro small batch, master cleanse twee cardigan pickled VHS before they sold out letterpress actually normcore.</p>
+                <div>
+                    <h3>Development Philosophy</h3>
+                    <p>While developing new projects I often explore new development ideas. One principle that I believe is essential to all software design methods is the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> principle. Committing to this idea will almost always result in more manageable code. I have explored <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">Object-Oriented Programming</a> heavily by being encouraged to extensively use it through my academic studies. But, recently I have considered some other paradigms such as <a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank">Functional Programming</a> and <a href="https://en.wikipedia.org/wiki/Prototype-based_programming">Prototypal inheritance</a> after reading lots of articles stating that<a href="http://harmful.cat-v.org/software/OO_programming/">OOP is Inherently Harmful</a>. </p>
+                </div>
 
-                <figure>
+                <figure class='philosophy-bubble'>
                     <!-- Wordbuble  -->
-
                 </figure>
             </section>
 
             <section>
-                <h3>Software Development</h3>
-                <figure>
-                    <!-- Radar Chart -->
-                </figure>
-            </section>
-
-            <section>
-                <h3>Design Patterns</h3>
-                <figure>
-                    
-                </figure>
-            </section>
-
-            <section>
-                <h3>Frameworks</h3>
+                
 
             </section>
 
@@ -401,14 +401,14 @@ excerpt: > #
             
         </section>
 
-        <section id='skill-software'>
+        <section id='skill-software' hidden>
             <h3>Software Affinity</h3>
             <figure>
                 <!-- Bar Graphs of skills -->
             </figure>
         </section>
 
-        <section id='skill-design'>
+        <section id='skill-design' hidden>
             <h3>Design</h3>
             <figure>
                 <!-- Bar Graphs of skills -->

@@ -17,7 +17,6 @@ portfolio.chartjs = {
         {value: 75, label: "SQL"},
         {value: 80, label: "Java"},
         {value: 60, label: "Ruby"},
-
     ],
     designData: [
         {value: 80, label: "Photoshop"},
@@ -33,6 +32,7 @@ portfolio.chartjs = {
      */
     initSkillsCharts: function() {
         this.defaults();
+        this.createWebChart();
         this.createLanguagesChart();
     },
     oldDefaults: function() {
@@ -63,6 +63,9 @@ portfolio.chartjs = {
     },
     createLanguagesChart: function() {
         this.createPolarChart('#skill-developing #developing-languages #language-chart', this.languagesData);
+    },
+    createWebChart: function(){
+        this.createPolarChart('#skill-developing #developing-web #web-chart', this.webData);
     },
     createRadarChart: function(selector, data){
         var element = $(selector);

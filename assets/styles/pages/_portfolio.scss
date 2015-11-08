@@ -127,6 +127,11 @@ body.portfolio {
 			}
 		}
 		section#projects {
+			h2.projects-title{
+				text-align: center;
+				padding-top: $padding;
+				padding-bottom: $padding;
+			}
 			//Main Projects
 			section.project {
 				@extend .row;
@@ -230,7 +235,7 @@ body.portfolio {
 						text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.2);
 					}
 				}
-				&:nth-child(odd) {
+				&:nth-child(even) {
 					background-color: $brand-primary;
 					color: white;
 					text-align: left;
@@ -438,7 +443,7 @@ body.portfolio {
 				}
 			}
 			> section#skill-developing {
-				> section.summary, > section#developing-philosophy {
+				> section.summary, > section#developing-philosophy > div{
 					@include center-layout;
 					text-align: center;
 					padding-top: $padding;
@@ -455,6 +460,19 @@ body.portfolio {
 					}
 					> figure {
 						@extend .col-md-5;
+					}
+				}
+				> section#developing-web{
+					@include make-row;
+					@include alt-layout-dev;
+					align-items: center;
+					padding: $padding;
+
+					> div {
+						@extend .col-md-7, .col-md-push-5;
+					}
+					> figure {
+						@extend .col-md-5, .col-md-pull-7;
 					}
 				}
 				> section#developing-frameworks {
