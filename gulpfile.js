@@ -18,7 +18,6 @@ var less = require('gulp-less');
 var merge = require('merge-stream');
 var postcss = require('gulp-postcss');
 var plumber = require('gulp-plumber');
-var responsiveImages = require('gulp-responsive-images');
 var responsive = require('gulp-responsive');
 var rev = require('gulp-rev');
 var runSequence = require('run-sequence');

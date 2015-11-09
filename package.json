@@ -25,8 +25,6 @@
   "homepage": "https://github.com/JoshuaRogan/portfolio#readme",
   "devDependencies": {
     "browser-sync": "^2.7.1",
-    "gulp-changed": "^1.2.1",
-    "gulp-responsive": "^1.2.1"
   },
   "dependencies": {
     "asset-builder": "^1.1.0",
@@ -36,6 +34,7 @@
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
+    "gulp-changed": "^1.2.1",
     "gulp-file": "^0.2.0",
     "gulp-flatten": "0.0.4",
     "gulp-if": "^1.2.5",
@@ -45,7 +44,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.0",
-    "gulp-responsive-images": "0.0.3",
+    "gulp-responsive": "^1.2.1",
     "gulp-rev": "^3.0.1",
     "gulp-sass": "^2.0.0",
     "gulp-sourcemaps": "^1.5.1",
