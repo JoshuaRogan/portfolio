@@ -1,0 +1,150 @@
+<section id='projects'>
+    <h2 class='projects-title'>Selected Works</h2>
+    <section class='project' id='genetics'>
+        <figure class='primary' data-sr="enter right, hustle 250px, vFactor 0.75">
+            <span class="icon icon-dna16"></span>
+        </figure>
+        <div>
+            <h2><a href="#">Population Genetics Simulator</a></h2>
+            <figure class="tools">
+                <ul>
+                    <li><a href="http://laravel.com/" title='Build with Laravel' target="_blank">Laravel</a></li>
+                    <li><a href="https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md" title='Search with Bloodhound.js' target="_blank">Bloodhound</a></li>
+                    <li><a href="http://canvasjs.com/" title='Graphs powered by Canvas JS' target="_blank">Canvas JS</a></li>
+                </ul>
+            </figure>
+            <p>My Population Genetics Simulator was built for the <a href="http://www.publichealth.pitt.edu/human-genetics" target="_blank">University of Pittsburgh's Genetics Department</a> as a tool for online genetics education and research. This tool helps to solve the urgent need for great "genomics literacy" of professionals across disciples.  </p>
+
+            <p>This tool is primarily powered with JavaScript to compute the highly mathematical formulas. To increase in-browser performance, HTML5 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Web_Workers_API" target="_blank">Web Workers</a> are utilized to create a threaded environment to dramatically speed up computation. Templating is provided through <a href="http://laravel.com/docs/master/blade" target="_blank">Laravel's Blade</a> engine. Graphing utilizes a custom version of <a href="http://canvasjs.com/" target="_blank">Canvas JS</a> for it's high performance with large amounts of data. The FAQ is powered via the <a href="https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md" target="_blank">Bloodhound engine</a>, created by twitter, for auto-complete and search. </p>
+            <p>Upcoming features will include an <strong>open API</strong> to access the computation engine and extend the application however is desired. </p>
+
+            <figure class="links">
+                <ul>
+                    <li><a href="https://github.com/JoshuaRogan/genetics" title='View on Github' target='_blank'><i class="fa fa-git"></i></a></li>
+                    <li><a href="/downloads/Popgen-Simulator-Poster.pdf" title='Download the poster' target='_blank'><i class="fa fa-file-pdf-o"></i></a></li>
+                    <li><a href="http://popgensimulator.pitt.edu/" title='View it live' target='_blank'><i class="fa icon icon-web58"></i></a></li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+
+    <section id='pqr' class='project'>
+        <figure class='primary' data-sr="enter left, hustle 250px, vFactor 0.75">
+            <span class="icon icon-atom27"></span>
+        </figure>
+        <div>
+            <h2><a href="#">Pitt Quantum Repository</a></h2>
+
+            <figure class="tools">
+                <ul>
+                    <li><a href="http://flask.pocoo.org/" title='Built with Flask' target="_blank">Flask</a></li>
+                    <li><a href="https://www.mongodb.org/" title='Powered by MongoDB' target="_blank">MongoDB</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" title='Graphics powered by WebGL' target="_blank">WebGL</a></li>
+                </ul>
+            </figure>
+
+            <p>The Pitt Quantum Repository (PQR) was developed for the <a href="#" target="_blank">University of Pittsburgh's Chemistry Department</a> to give users instant access to a large database of molecular properties computed from quantum mechanics, saving on the time necessary to repeat the same calculations over and over again. PQR makes it particularly easy to share a 3D rendition of molecular structures and properties for research, collaboration, and classes. For example, research papers can link to PQR entries using digital object identifiers (DOI). Lecture slides and handouts can link to PQR using barcodes that students can scan on their mobile devices. </p>
+
+            <p>PQR was developed with the lightweight micro-framework for python, <a href="http://flask.pocoo.org/" target="_blank">Flask</a>. To quickly handle the large amount of molecular data, <strong>currently contains over 100,000 molecules</strong>,the data is managed by <a href="https://www.mongodb.org/" target="_blank">MongoDB</a> with highly tuned indexing to speed up search results. Auto-complete searching is developed with the <a href="https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md" target="_blank">Bloodhound engine</a> which combines off-line quick access and throttling when accessing the remote database. Molecule visualizations are powered with <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" title='Graphics powered by WebGL' target="_blank">WebGL</a> and another Pitt project <a href="http://3dmol.csb.pitt.edu/" target="_blank">3DMol.js</a></p>
+            <p>Features in development include a significantly advanced search engine allowing the user to find molecules with fine tuned queries.  </p>
+            <figure class="links">
+                <ul>
+                    <li><a href="https://github.com/pittquantum/PittQuantumRepository" title='View on Github' target='_blank'><i class="fa fa-git"></i></a></li>
+                    <li><a href="http://pqr.pitt.edu/" title='View it live' target='_blank'><i class="fa icon icon-web58"></i></a></li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+
+    <section class='project' id='efnback'>
+        <figure class='primary' data-sr="enter right, hustle 250px, vFactor 0.75">
+            <span class="icon icon-touch18"></span>
+        </figure>
+        <div>
+            <h2><a href="">EFN Back</a></h2>
+            <figure class="tools">
+                <ul>
+                    <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                    <li><a href="https://jquerymobile.com/" target="_blank">jQuery Mobile</a></li>
+                    <li><a href="https://www.mysql.com/" target="_blank">MySQL</a></li>
+                </ul>
+            </figure>
+            <p>EFN Back is an application developed for <a href="http://www.upmc.com/Pages/default.aspx" target="_blank">UPMC</a> to test reaction time compared to viewing emotional stimuli on screen. There are several different types of tests. The simplest is having to click or touch the screen as soon as the target letter appears. As the test progresses they become more difficult adding stimuli (emotional faces) and looking for patterns in letters. </p>
+
+            <p>EFN Back was developed mostly with native JavaScript and powered by a simple PHP framework I developed for mostly static websites. This application was developed in a mobile-first philosophy which required detailed attention to timing of touch events on many different devices. Detailed <strong>analytics</strong> were recorded to provide insight to the researchers. This data was stored and manipulated via mySQL and could be interfaced in an admin section for the researchers. Their goal was to see if the user's time would increase after given certain tips.  </p>
+            <figure class="links">
+                <ul>
+                    <li><a href="https://github.com/JoshuaRogan/efnback" title='View on Github' target="_blank"><i class="fa fa-git"></i></a></li>
+                    <li><a href="http://efnback.droplet.joshuarogan.com/" title='View it live' target="_blank"><i class="fa icon icon-web58"></i></a></li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+    <section class='project' id='tcp'>
+        <figure class='primary' data-sr="enter left, hustle 250px, vFactor 0.75">
+            <span class="icon icon-physics10"></span>
+        </figure>
+        <div>
+            <h2><a href="">Theoretical &amp; Computational Chemistry</a></h2>
+            <figure class="tools">
+                <ul>
+                    <li><a href="//jekyllrb.com" target="_blank">Jekyll</a></li>
+                    <li><a href="https://travis-ci.org/" target="_blank">Travis CI</a></li>
+                </ul>
+            </figure>
+            <p><a href="http://www.chem.pitt.edu/research/computational" target="_blank">The Theoretical &amp; Computational Chemistry at the University of Pittsburgh</a> needed a blog and CMS solution to organize their groups, news and events. The primary goal was to promote the department and have one place to share upcoming events and news along with engaging more students on campus. </p>
+
+            <p>The blog was created with the Ruby static site generator <a href="//jekyllrb.com" target="_blank">Jekyll</a>. It is a very simple static site but I was able to utilize some new tools such as <a href="https://travis-ci.org/" target="_blank">Travis CI</a> for testing and a develop a custom bash deploy process to an Enterprise Web Infrastructure (EWI). </p>
+
+            <figure class="links">
+                <ul>
+                    <li><a href="https://github.com/tccp/website" title='View on Github' target='_blank'><i class="fa fa-git" ></i></a></li>
+                    <li><a href="http://www.pitt.edu/~tcp/" title='View it live' target='_blank'><i class="fa icon icon-web58"></i></a></li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+    <section class='project' id='bac'>
+        <figure class='primary' data-sr="enter right, hustle 250px, vFactor 0.75">
+            <span class="icon icon-alcohol65"></span>
+        </figure>
+        <div>
+            <h2><a href="">B.A.C. Calculator</a></h2>
+            <figure class="tools">
+                <ul>
+                    <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+                </ul>
+            </figure>
+            <p>A very simple Blood Alcohol Content calculator. This was developed to have a simply designed BAC calculator that didn't have a annoying ads and was very easy to use.</p>
+            <p>This is a very simple one page application built with simple JavaScript events. The formula used to determine the peak BAC was found on <a href="https://en.wikipedia.org/wiki/Blood_alcohol_content#Estimated_blood_ethanol_concentration_.28EBAC.29" target="_blank">Wikipedia</a>.  </p>
+            <figure class="links">
+                <ul>
+                    <li><a href="https://github.com/JoshuaRogan/bac" title='View on Github' target="_blank"><i class="fa fa-git"></i></a></li>
+                    <li><a href="http://bac.jcubedworld.com/" title='View it live' target="_blank"><i class="fa icon icon-web58"></i></a></li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+
+    <section class='project' id='sandhogs'>
+        <figure class='primary' data-sr="enter left, hustle 250px, vFactor 0.75">
+            <span class="icon icon-sports-ball19"></span>
+        </figure>
+        <div>
+            <h2><a href="">East Coast Sandhogs</a></h2>
+            <figure class="tools">
+                <ul>
+                    <li><a href="http://laravel.com/" title='Build with Laravel' target="_blank">Laravel</a></li>
+                </ul>
+            </figure>
+            <p>The East Coast Sandhogs are a national travel baseball organization based in Northeastern Pennsylvania. The Sandhogs have teams for ages of 8 through 18. This website is a portal for all information about the team. It has detailed lists for events, schedules, media, and rosters. </p>
+            <p>This is a simple appearing site but with a powerful custom built <a href="http://laravel.com/" title='Build with Laravel' target="_blank">Laravel</a> back-end to manage 10+ teams each year saving all of the histories. The data is all appropriately tied to each team with powerful back-end dashboard to provide alerts, event updates, and updates. </p>
+            <figure class="links">
+                <ul>
+                    <li><a href="https://github.com/JoshuaRogan/sandhogs" title='View on Github' target="_blank"><i class="fa fa-git"></i></a></li>
+                    <li><a href="http://sandhogsbaseball.com/" title='View it live' target="_blank"><i class="fa icon icon-web58"></i></a></li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+</section>

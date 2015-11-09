@@ -242,6 +242,9 @@ body.portfolio {
 					background-color: $brand-primary;
 					color: white;
 					text-align: left;
+					a{
+						color: white;
+					}
 
 					figure.primary {
 						@extend .col-md-push-8;
