@@ -75,7 +75,6 @@ portfolio.chartjs = {
         element.next().html(chart.generateLegend());
     },
     createPolarChart: function(selector, data){
-        console.log(Chart.defaults);
         var element = $(selector);
         var ctx = element.get(0).getContext("2d");
         var final_data = data.map(function(obj, key){

@@ -18,7 +18,8 @@ var less = require('gulp-less');
 var merge = require('merge-stream');
 var postcss = require('gulp-postcss');
 var plumber = require('gulp-plumber');
-var responsive = require('gulp-responsive-images');
+var responsiveImages = require('gulp-responsive-images');
+var responsive = require('gulp-responsive');
 var rev = require('gulp-rev');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
@@ -76,11 +77,11 @@ var revManifest = path.dist + 'assets.json';
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
 var cssTasks = function(filename, inline) {
-    if(inline === undefined) inline = false; 
+    if (inline === undefined) inline = false;
     return lazypipe().pipe(function() {
         return gulpif(!enabled.failStyleTask, plumber());
     }).pipe(function() {
-        return gulpif(enabled.maps  && !inline, sourcemaps.init());
+        return gulpif(enabled.maps && !inline, sourcemaps.init());
     }).pipe(function() {
         return gulpif('*.less', less());
     }).pipe(function() {
@@ -91,10 +92,13 @@ var cssTasks = function(filename, inline) {
             errLogToConsole: !enabled.failStyleTask
         }));
     }).pipe(concat, filename).pipe(function() {
-        if(inline){
-            return postcss([autoprefixer, cssnext, cssnano({discardComments: {removeAll: true}})]);
-        }
-        else if (enabled.isProduction) {
+        if (inline) {
+            return postcss([autoprefixer, cssnext, cssnano({
+                discardComments: {
+                    removeAll: true
+                }
+            })]);
+        } else if (enabled.isProduction) {
             return postcss([autoprefixer, cssnext, cssnano]);
         } else {
             return postcss([autoprefixer, cssnext]);
@@ -161,8 +165,7 @@ gulp.task('styles', ['wiredep'], function() {
         }
         merged.add(gulp.src(dep.globs, {
             base: 'styles'
-        })
-        .pipe(cssTasksInstance));
+        }).pipe(cssTasksInstance));
     });
     return merged.pipe(writeToManifest('styles'));
 });
@@ -190,72 +193,26 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images. And create mulitple images for true 
 // responsive
 gulp.task('images', function() {
-    return gulp.src(globs.images)
-        .pipe(responsive({
-            '**/*.png': [
-            {
-                width: '100%',
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
-            }, 
-            {
-                width: 3000,
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
-                rename: {
-                    suffix: "-xl"
-                }
-            }, 
-            {
-                width: 1500,
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
-                rename: {
-                    suffix: "-lg"
-                }
-            }, 
-            {
-                width: 1000,
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
-                rename: {
-                    suffix: "-md"
-                }
-            }, 
-            {
-                width: 800,
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
-                rename: {
-                    suffix: "-sm"
-                }
-            }, 
-            {
-                width: 350,
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
-                rename: {
-                    suffix: "-xs"
-                }
-            },
-            {
-                width: 250,
-                passThroughUnused: true,
-                errorOnUnusedImage: false,
+    return gulp.src(globs.images).pipe(responsive({
+            '**/*.{png,jpg,jpeg}': [{
+                width: 300,
                 rename: {
                     suffix: "-logo"
                 }
+            }, {
+                width: 2000,
+                rename: {
+                    suffix: "-xl"
+                }
+            }, {
+                width: '100%'
             }]
-        },{
+        }, {
             passThroughUnused: true,
-            errorOnUnusedImage: false, 
             withoutEnlargement: true,
-            errorOnUnusedConfig: false
+            errorOnEnlargement: false,
+            errorOnUnusedImage: false
         }))
-        .on('end', function(){
-            // console.log(this);
-        })
-
         //Compress each image
         .pipe(imagemin({
             progressive: true,
@@ -268,9 +225,7 @@ gulp.task('images', function() {
             use: [imageminJpegRecompress({
                 loops: 3
             })]
-        }))
-        .pipe(gulp.dest(path.dist + 'images'))
-        .pipe(browserSync.stream());
+        })).pipe(gulp.dest(path.dist + 'images')).pipe(browserSync.stream());
 });
 // ### JSHint
 // `gulp jshint` - Lints configuration JSON and project JS.
@@ -323,8 +278,7 @@ gulp.task('jekyll', function() {
         browserSync.reload();
     });
 });
-
-gulp.task('favicons', function(){
+gulp.task('favicons', function() {
     exec('mkdir app/_site/assets/favicons/ && cp -r assets/favicons/* app/_site/assets/favicons/', function(err, stdout, stderr) {
         browserSync.reload();
     });

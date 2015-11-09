@@ -25,7 +25,8 @@
   "homepage": "https://github.com/JoshuaRogan/portfolio#readme",
   "devDependencies": {
     "browser-sync": "^2.7.1",
-    "gulp-changed": "^1.2.1"
+    "gulp-changed": "^1.2.1",
+    "gulp-responsive": "^1.2.1"
   },
   "dependencies": {
     "asset-builder": "^1.1.0",

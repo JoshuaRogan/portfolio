@@ -1,5 +1,6 @@
 <style>
-[data-sr] {
-	visibility: hidden;
-}
+	[data-sr] {
+		visibility: hidden;
+		will-change: transform;
+	}
 </style>
