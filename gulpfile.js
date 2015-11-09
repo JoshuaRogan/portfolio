@@ -191,75 +191,84 @@ gulp.task('fonts', function() {
 // responsive
 gulp.task('images', function() {
     return gulp.src(globs.images)
-        // .pipe(responsive({
-        //     '**/*.png': [
-        //     {
-        //         width: '100%',
-        //         passThroughUnused: true,
-        //         errorOnUnusedImage: false,
-        //     }, 
-        //     {
-        //         width: 3000,
-        //         passThroughUnused: true,
-        //         errorOnUnusedImage: false,
-        //         rename: {
-        //             suffix: "-xl"
-        //         }
-        //     }, 
-        //     {
-        //         width: 1500,
-        //         passThroughUnused: true,
-        //         errorOnUnusedImage: false,
-        //         rename: {
-        //             suffix: "-lg"
-        //         }
-        //     }, 
-        //     {
-        //         width: 1000,
-        //         passThroughUnused: true,
-        //         errorOnUnusedImage: false,
-        //         rename: {
-        //             suffix: "-md"
-        //         }
-        //     }, 
-        //     {
-        //         width: 800,
-        //         passThroughUnused: true,
-        //         errorOnUnusedImage: false,
-        //         rename: {
-        //             suffix: "-sm"
-        //         }
-        //     }, 
-        //     {
-        //         width: 350,
-        //         passThroughUnused: true,
-        //         errorOnUnusedImage: false,
-        //         rename: {
-        //             suffix: "-xs"
-        //         }
-        //     }]
-        // },{
-        //     passThroughUnused: true,
-        //     errorOnUnusedImage: false, 
-        //     withoutEnlargement: true,
-        //     errorOnUnusedConfig: false
-        // }))
-        // .on('end', function(){
-        //     console.log(this);
-        // })
+        .pipe(responsive({
+            '**/*.png': [
+            {
+                width: '100%',
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+            }, 
+            {
+                width: 3000,
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+                rename: {
+                    suffix: "-xl"
+                }
+            }, 
+            {
+                width: 1500,
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+                rename: {
+                    suffix: "-lg"
+                }
+            }, 
+            {
+                width: 1000,
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+                rename: {
+                    suffix: "-md"
+                }
+            }, 
+            {
+                width: 800,
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+                rename: {
+                    suffix: "-sm"
+                }
+            }, 
+            {
+                width: 350,
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+                rename: {
+                    suffix: "-xs"
+                }
+            },
+            {
+                width: 250,
+                passThroughUnused: true,
+                errorOnUnusedImage: false,
+                rename: {
+                    suffix: "-logo"
+                }
+            }]
+        },{
+            passThroughUnused: true,
+            errorOnUnusedImage: false, 
+            withoutEnlargement: true,
+            errorOnUnusedConfig: false
+        }))
+        .on('end', function(){
+            // console.log(this);
+        })
+
         //Compress each image
-        // .pipe(imagemin({
-        //     progressive: true,
-        //     interlaced: true,
-        //     svgoPlugins: [{
-        //         removeUnknownsAndDefaults: false
-        //     }, {
-        //         cleanupIDs: false
-        //     }],
-        //     use: [imageminJpegRecompress({
-        //         loops: 3
-        //     })]
-        // }))
+        .pipe(imagemin({
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{
+                removeUnknownsAndDefaults: false
+            }, {
+                cleanupIDs: false
+            }],
+            use: [imageminJpegRecompress({
+                loops: 3
+            })]
+        }))
         .pipe(gulp.dest(path.dist + 'images'))
         .pipe(browserSync.stream());
 });
