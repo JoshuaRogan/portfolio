@@ -193,17 +193,26 @@ gulp.task('fonts', function() {
 // responsive
 gulp.task('images', function() {
     return gulp.src(globs.images).pipe(responsive({
-            '**/*.{png,jpg,jpeg}': [{
+            '**/*.{png,jpg,jpeg}': [
+            {
+                width: 50,
+                rename: {
+                    suffix: "-logo-xs"
+                }
+            }, 
+            {
                 width: 200,
                 rename: {
                     suffix: "-logo"
                 }
-            }, {
+            }, 
+            {
                 width: 2000,
                 rename: {
                     suffix: "-xl"
                 }
-            }, {
+            }, 
+            {
                 width: '100%'
             }]
         }, {
