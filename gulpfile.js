@@ -194,7 +194,7 @@ gulp.task('fonts', function() {
 gulp.task('images', function() {
     return gulp.src(globs.images).pipe(responsive({
             '**/*.{png,jpg,jpeg}': [{
-                width: 300,
+                width: 200,
                 rename: {
                     suffix: "-logo"
                 }
