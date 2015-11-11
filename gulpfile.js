@@ -97,7 +97,7 @@ var cssTasks = function(filename, inline) {
                     removeAll: true
                 }
             })]);
-        } else if (enabled.isProduction) {
+        } else if (false) {
             return postcss([autoprefixer, cssnext, cssnano]);
         } else {
             return postcss([autoprefixer, cssnext]);
