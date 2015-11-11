@@ -1,0 +1,3 @@
+portfolio.validation = {
+	debug: true
+};

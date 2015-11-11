@@ -1,0 +1,21 @@
+/**
+ * Basic Form Mixin
+ * 
+ */
+@mixin basic_form(){
+	.form-group{
+		label{
+			font-weight: bold; 
+		}
+
+		input, textarea{
+			border-width: 2px; 
+			border-color: $brand-primary;
+
+			&:focus{
+				border-color: lighten($brand-primary, 20%);
+			}
+		}
+
+	}
+}

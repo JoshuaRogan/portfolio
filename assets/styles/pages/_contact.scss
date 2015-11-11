@@ -1,0 +1,56 @@
+body.contact{
+	main{
+		> div{
+			padding: $global-fluid-padding;
+			display: flex;
+			align-items: center;
+			align-content: center;
+
+			> section{
+				flex-basis: 50vw;
+				margin-left: auto; 
+				margin-right: auto;
+				
+				// Contact Me
+				h1{
+					text-align: center;
+					margin-bottom: $global-fluid-padding *2; 
+				}
+				
+				
+				figure{
+					text-align: center;
+
+					img{
+						@extend .img-circle;
+						@include responsive-man(width, 35vw, 30vw, 30vw, 20vw, 15vw);
+						border: 3px solid $brand-primary;
+					}
+
+					
+				}
+
+				p{
+					text-align: center;
+				}
+
+				@include media-breakpoint-down(sm) {
+					flex-basis: 80vw;
+				}
+
+				form{
+					@include basic_form;
+
+					button{
+						width: 100%;
+					}
+				}	
+			}
+
+			> aside{
+				@extend .col-md-3;
+				display: none;
+			}
+		}
+	}
+}
