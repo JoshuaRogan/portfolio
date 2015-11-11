@@ -15,7 +15,7 @@ portfolio.quotes = {
 			quote.quote = "&#8220;" + quote.quote + "&#8221;";
 			element.find('.quote').html(quote.quote);
 			element.attr('cite',quote.source);
-			this.enableTypedQuote(selector, quote.quote, quote.source); 
+			// this.enableTypedQuote(selector, quote.quote, quote.source); 
 		}
 		else{
 			if(this.debug) console.log("Bad selector");
