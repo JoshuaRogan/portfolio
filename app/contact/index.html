@@ -12,7 +12,10 @@ excerpt: > #
         <figure>
         	<img data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' src="/assets/images/misc/coffe-mug-logo.png" alt='coffe mug'>
         </figure>
-        <p data-sr>Please fill out this short form if you would like to contact me directly. </p>
+        
+        {% include social-icons.html %}
+
+        <p class="text-muted" data-sr>Please fill out this short form if you would like to contact me directly. </p>
         <form data-sr action="//formspree.io/JoshJRogan@gmail.com" method="POST" target="_blank">
             <fieldset class="form-group">
                 <label for="email"><i class="fa fa-share"></i> Email address</label>
@@ -27,7 +30,7 @@ excerpt: > #
                 <label for="message"><span class='icon icon-keyboard'></span> Message</label>
                 <textarea class="form-control" id="message" name='message' rows="3" required></textarea>
             </fieldset>
-            <button type="submit" class="btn btn-primary">Submit <span class="icon icon-paper-plane"></span></button>
+            <button type="submit" class="btn btn-primary faa-parent animated-hover">Submit <i class="fa fa-paper-plane faa-float"></i> </button>
         </form>
     </section>
     <aside>

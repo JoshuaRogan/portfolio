@@ -1,0 +1,50 @@
+.social-icons{
+	ul{
+		@extend .list-unstyle, .list-inline;
+		text-align: center;
+		li{
+			a{
+				font-size: 2.0rem; 
+				line-height: 2;
+				transition: color $bootstrap-transition;
+
+				&:visited, &:hover, &:active{
+					text-decoration: none; 
+				}
+				
+				//Icon Colors
+				$lighten-by: 10%;
+				&.icon-linkedin-circled{
+					color: $color-linkedin;
+					&:hover{
+						color: lighten($color-linkedin, $lighten-by);
+					}
+				}
+				&.icon-gplus-circled{
+					color: $color-gplus;
+					&:hover{
+						color: lighten($color-gplus, $lighten-by);
+					}
+				}
+				&.icon-twitter-circled{
+					color: $color-twitter;
+					&:hover{
+						color: lighten($color-twitter, $lighten-by);
+					}
+				}
+				&.icon-facebook-circled{
+					color: $color-facebook;
+					&:hover{
+						color: lighten($color-facebook, $lighten-by);
+					}
+				}
+				&.icon-flickr-circled{
+					color: $color-flickr;
+					&:hover{
+						color: lighten($color-flickr, $lighten-by);
+					}
+				}
+			}
+		}
+	}
+}

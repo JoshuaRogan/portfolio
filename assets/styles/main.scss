@@ -12,7 +12,9 @@
 // bower:scss
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
-// endbower
+// endbower 
+@import "../../bower_components/font-awesome-animation/dist/font-awesome-animation.min";
+
 
 // //Utils
 @import "util/misc";
@@ -30,6 +32,7 @@
 //Main Components (Change to references)
 @import "components/jumbotron";
 @import "components/forms";
+@import "components/social-icons";
 
 //Page Specific styles 
 @import "pages/home";
