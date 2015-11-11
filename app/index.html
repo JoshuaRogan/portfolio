@@ -1,17 +1,36 @@
 ---
 layout: default
 title: Home
-page: default-page home
-jumbotron: true
+page: default-page portfolio
+jumbotron: false
 excerpt: > #
     Josh Rogan's portfolio of work in web and application developing. Experience at University of Pittsburgh, Fireman Creative, and University of Scranton. 
 ---
 <section>
-    <header data-sr>
-        <h2>Hello World!</h2>
-    </header>
+    <section data-sr id='summary'>
+        <div>
+            <h1>Joshua Rogan's Portfolio</h1>
+            <img src="/assets/images/portfolio/business-shake-opt.svg">
+            <p>Hello, potential employer or stalker! My name is <strong>Joshua Rogan</strong>. I have earned my bachelor's degree in <strong>Computer Science</strong> at the <a href='https://cs.pitt.edu/' target="_blank">University of Pittsburgh</a>.I am currently working at <a href="//firemancreative.com" target="_blank">Fireman Creative</a> as a full stack developer in Pittsburgh Pennsylvania. I also do a significant amount of freelance work for a variety of clients. </p>
+            <p>Keep scrolling or choose an item below to check out my personal portfolio!</p>
 
-    <section>
-        
+            {% include portfolio/portfolio-nav.html %}
+        </div>
     </section>
+
+    {% include portfolio/selected-works.html %}
+    {% include portfolio/more-projects.html %}
+    {% include portfolio/professional-skills.html %}
+    {% include portfolio/portfolio-nav.html %}
+
+    <section id="wordbubble">
+        <h2>Word Bubble</h2>
+        <section>
+            <!-- Default Word-bubble (Will be replaced with JS) -->
+            <p><span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-1'>DRY</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-3'>Premiere Pro</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-3'>Gulp</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-2 weight-0'>Font Awesome</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-2'>Bower</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-2'>Responsive</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-0'>Lightroom</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-0'>Bash</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-3'>Unix</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-2'>Photoshop</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-2 weight-0'>SASS</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-2 weight-3'>Google App Engine</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-2 weight-3'>LESS</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-0'>Wordpress</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-0'>PostCSS</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-0'>NPM</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-1'>Sublime</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-0'>Functional</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-1'>Modernizr</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-3'>Flask</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-0 weight-1'>Bootstrap</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-3'>Basecamp</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-0'>Capistrano</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-3'>Laravel</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-0'>Jekyll</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-0'>Cake PHP</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-0'>Grunt</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-2'>Bedrock</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-3 weight-3'>Git</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-1 weight-2'>Atlassian</span> <span data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' class='word bubble-size-2 weight-0'>Foundation</span> </p>
+        </section>
+    </section>
+
+
+
 </section>
