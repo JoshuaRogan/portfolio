@@ -4,7 +4,7 @@
  */
 body.portfolio {
 	//Vars 
-	$padding: 2.5%;
+	$padding: $global-fluid-padding;
 
 	//Mixins
 	@mixin alt-layout-dev() {

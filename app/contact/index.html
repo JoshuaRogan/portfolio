@@ -1,0 +1,36 @@
+---
+layout: default
+title: Contact Me
+page: contact
+jumbotron: true
+excerpt: > #
+   Contact Josh Rogan for person and professional reasons.
+---
+<div>
+    <section>
+        <h1><span class='icon icon-email'></span> Contact Me</h1>
+        <figure>
+        	<img src="/assets/images/misc/coffe-mug-logo.png" alt='coffe mug'>
+        </figure>
+        <p>Please fill out this short form if you would like to contact me directly. </p>
+        <form action="//formspree.io/JoshJRogan@gmail.com" method="POST" target="_blank">
+            <fieldset class="form-group">
+                <label for="email"><i class="fa fa-share"></i> Email address</label>
+                <input name='email' type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <small class="text-muted">I'll never share your email with anyone else.</small>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="subject"><i class="fa fa-comment"></i> Subject</label>
+                <input name='subject' type="text" class="form-control" id="subject" placeholder="Please Enter the Subject">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="message"><span class='icon icon-keyboard'></span> Message</label>
+                <textarea class="form-control" id="message" name='message' rows="3" required></textarea>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit <span class="icon icon-paper-plane"></span></button>
+        </form>
+    </section>
+    <aside>
+        <h2>Aside</h2>
+    </aside>
+</div>

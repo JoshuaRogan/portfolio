@@ -26,7 +26,8 @@
     "scrollreveal": "scrollReveal.js#~2.3.2",
     "Chart.js": "~1.0.2",
     "velocity": "~1.2.3",
-    "typed.js": "~1.1.1"
+    "typed.js": "~1.1.1",
+    "jquery-validation": "~1.14.0"
   },
   "resolutions": {
     "modernizr": "~3.1.0"

@@ -2,7 +2,8 @@
 @import "common/variables";
 @import "common/typography";
 
-@import "portfolio-icons/styles";
+// Use the fontastic cloud for dev
+// @import "portfolio-icons/styles";
 
 //Vendor Overrides 
 @import "extenstions/bootstrap-overrides";
@@ -28,7 +29,9 @@
 
 //Main Components (Change to references)
 @import "components/jumbotron";
+@import "components/forms";
 
 //Page Specific styles 
 @import "pages/home";
 @import "pages/portfolio";
+@import "pages/contact";
