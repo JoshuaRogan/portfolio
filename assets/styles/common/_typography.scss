@@ -37,10 +37,15 @@ h6{
 //
 //---------------------- 
 p{
-
+	a{
+		&:hover{
+			text-decoration: none;
+		}
+	}
 }
 
 a{
 	//Colors set by bootstrap 
 	font-weight: 700;
+	transition: color 0.05s ease-in-out;
 }
