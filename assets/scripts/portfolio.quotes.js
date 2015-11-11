@@ -8,11 +8,14 @@ portfolio.quotes = {
 		return this.quotes[Math.floor(Math.random() * (this.quotes.length - 0) + 0) ];
 	},
 	loadJumboTron: function(selector){
-		var element = $(selector);
 		if(selector.length){
+			console.log(selector);
+			var element = $(selector);
 			var quote = this.getQuote();
+			quote.quote = "&#8220;" + quote.quote + "&#8221;";
 			element.find('.quote').html(quote.quote);
 			element.attr('cite',quote.source);
+			this.enableTypedQuote(selector, quote.quote, quote.source); 
 		}
 		else{
 			if(this.debug) console.log("Bad selector");
@@ -20,5 +23,18 @@ portfolio.quotes = {
 	},
 	loadFooter: function(selector){
 
+	},
+	enableTypedQuote: function(selector, quote, source){
+		if(selector.length){
+			var quote_element = $(selector).find('.quote'); 
+			quote_element.typed({
+            	strings: [quote + "<cite> - " + source + "</cite>"],
+    			contentType: 'html' // or 'text'
+        	});
+		}
+		else{
+			if(this.debug) console.log("Bad selector");
+		}
+		
 	}
 };

@@ -12,19 +12,17 @@
 		font-weight: 700;
 	}
 	blockquote {
-		//Load all quotes only show one
-		&.show {
-			
-		}
-		
-		font-weight: 300;
 		@include responsive-man(font-size, 0.75rem, 1.25rem, 1.5rem, 1.75rem, 1.75rem);
+		@include responsive-man(width, 80vw, 80vw, 80vw, 70vw, 60vw);
+		font-weight: 300;
+		margin-left: auto; 
+		margin-right: auto;
 
 		//Quote
 		p {
-			@extend .center-block;
 			margin-bottom: 0;
-			@include responsive-man(width, 80vw, 80vw, 80vw, 70vw, 60vw);
+			text-align: center;
+			display: inline;
 		}
 		//Source
 		footer {
