@@ -33,8 +33,10 @@
 @import "components/jumbotron";
 @import "components/forms";
 @import "components/social-icons";
+@import "components/vertical-timeline";
 
 //Page Specific styles 
 @import "pages/home";
 @import "pages/portfolio";
 @import "pages/contact";
+@import "pages/about";

@@ -24,17 +24,20 @@
 		- http://peterwesolowski.co.uk
 	- Content
 		- Birth
+		- Started Playing Baseball
 		- Achievements
+		- Started Playing Disc Golf
 		- University of Scranton 
-			- Residential Consultatn
-			- CTLE
+		- Residential Consultatn
+		- CTLE
+		- EFN Back
 		- University of Pittsburgh
-			- Genetics Application 
-			- PQR
-			- Graduated
+		- Genetics Application 
+		- PQR
+		- Something Else at PItt
+		- Sand Hogs 
+		- Graduated (Pitt)
 		- Fireman Creative
-		
-- 
 
 ## Misc
 

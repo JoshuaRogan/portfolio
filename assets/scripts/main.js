@@ -33,6 +33,12 @@ var portfolio = {
             },
             finalize: function() {}
         },
+        'about': {
+            init: function() {
+                
+            },
+            finalize: function() {}
+        },
         'portfolio':{
             init: function(){
                 portfolio.wordbubble.initSkillsWordBubble('#wordbubble section');

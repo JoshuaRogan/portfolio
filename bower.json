@@ -30,15 +30,15 @@
     "jquery-validation": "~1.14.0",
     "font-awesome-animation": "~0.0.7"
   },
-  "resolutions": {
-    "modernizr": "~3.1.0"
-  },
   "overrides": {
     "font-awesome": {
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
       ]
+    },
+    "modernizr": {
+      "main": "./modernizr.js"
     }
   }
 }

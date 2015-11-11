@@ -1,0 +1,8 @@
+/**
+ * Styling for the about page
+ */
+body.about{
+	main{
+		@include verticalTimeline;
+	}
+}
