@@ -8,7 +8,6 @@ set :repo_url, 'git@github.com:JoshuaRogan/portfolio.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '~/sites/portfolio'
 
 # Default value for :scm is :git
 # set :scm, :git

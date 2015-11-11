@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
+server 'droplet.joshuarogan.com', user: 'josh', roles: %w{app web}
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
@@ -30,7 +30,7 @@
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
+set :deploy_to, '~/sites/portfolio-prod'
 
 
 # Custom SSH Options
