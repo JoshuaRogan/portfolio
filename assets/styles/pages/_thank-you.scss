@@ -1,0 +1,16 @@
+body.thank-you{
+	main{
+		> section{
+			margin-top: 20px; 
+			width: 50vw;
+			margin-left: auto; 
+			margin-right: auto;
+			padding: $global-fluid-padding;
+			text-align: center;
+
+			@include media-breakpoint-down(sm) {
+					width: 80vw;
+			}
+		}
+	}
+}

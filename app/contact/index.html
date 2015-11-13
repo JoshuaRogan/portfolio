@@ -16,10 +16,10 @@ excerpt: > #
         {% include social-icons.html %}
 
         <p class="text-muted" data-sr>Please fill out this short form if you would like to contact me directly. </p>
-        <form data-sr action="//formspree.io/JoshJRogan@gmail.com" method="POST" target="_blank">
+        <form data-sr action="//formspree.io/JoshJRogan@gmail.com" method="POST">
             <fieldset class="form-group">
-                <label for="email"><i class="fa fa-share"></i> Email address</label>
-                <input name='email' type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <label for="_replyto"><i class="fa fa-share"></i> Email address</label>
+                <input name='_replyto' type="email" class="form-control" id="_replyto" placeholder="Please enter your email" required>
                 <small class="text-muted">I'll never share your email with anyone else.</small>
             </fieldset>
             <fieldset class="form-group">
@@ -30,6 +30,9 @@ excerpt: > #
                 <label for="message"><span class='fa fa-pencil'></span> Message</label>
                 <textarea class="form-control" id="message" name='message' rows="3" required></textarea>
             </fieldset>
+            <input type="text" name="_gotcha" hidden/>
+            <input type="hidden" name="_next" value="/thank-you" />
+            <input type="hidden" name="_subject" value="JoshuaRogan - Contact Me" />
             <button type="submit" class="btn btn-primary faa-parent animated-hover">Submit <i class="fa fa-paper-plane faa-float"></i> </button>
         </form>
     </section>
