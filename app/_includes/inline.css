@@ -1,5 +1,5 @@
 <style>
-	[data-sr] {
+	.js [data-sr] {
 		visibility: hidden;
 		will-change: transform;
 	}

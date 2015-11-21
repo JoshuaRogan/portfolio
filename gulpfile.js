@@ -91,14 +91,13 @@ var cssTasks = function(filename, inline) {
             errLogToConsole: !enabled.failStyleTask
         }));
     }).pipe(concat, filename).pipe(function() {
-        if (inline) {
+        if (enabled.isProduction) {
             return postcss([autoprefixer, cssnext, cssnano({
                 discardComments: {
                     removeAll: true
-                }
+                },
+                mergeIdents: false //Causing recursive error
             })]);
-        } else if (false) {
-            return postcss([autoprefixer, cssnext, cssnano]);
         } else {
             return postcss([autoprefixer, cssnext]);
         }

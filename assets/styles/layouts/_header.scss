@@ -54,6 +54,7 @@ header{
 		@extend .hidden-sm-up;
 		button{
 			@extend .navbar-toggler, .pull-right;
+			color: #fff !important; 
 		}
 	}
 }
