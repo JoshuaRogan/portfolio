@@ -22,13 +22,14 @@
   "dependencies": {
     "modernizr": "2.8.2",
     "font-awesome": "fontawesome#~4.4.0",
-    "bootstrap": "~4.0.0",
-    "scrollreveal": "scrollReveal.js#~2.3.2",
+    "bootstrap": "~4.0.0-alpha.2",
+    "scrollreveal": "~3.0.5",
     "Chart.js": "~1.0.2",
     "velocity": "~1.2.3",
     "typed.js": "~1.1.1",
     "jquery-validation": "~1.14.0",
-    "font-awesome-animation": "~0.0.7"
+    "font-awesome-animation": "~0.0.7",
+    "tether": "~1.1.1"
   },
   "overrides": {
     "font-awesome": {

@@ -21,11 +21,33 @@ portfolio.helpers = {
      * @return {[type]} [description]
      */
     scrollReveal: function() {
-        window.sr = new scrollReveal({
+        window.sr = new ScrollReveal({
             vFactor: 0.3
         });
-        //Init main > h1, main > section, etc., nav, footer > div
-        //Remove all data-sr
+
+        //Default Scroll Reveals
+        // sr.reveal('[data-sr]');
+        sr.reveal('.flip-45',{rotate: {x: 45}});
+        sr.reveal('.flip-45',{rotate: {x: 45}});
+
+
+        
+
+        //Portfolio Items
+        
+
+        //Logos on portfolio page
+        sr.reveal('#professional-skills img',{
+            rotate: {x: 45},
+            viewFactor: 0.01,
+            delay: 100
+        });
+
+        //For Hire Panels
+        sr.reveal('.packages .sr-enter-right',{distance: '200px', origin:'right', delay: 250});
+        sr.reveal('.packages .sr-enter-left',{distance: '200px', origin: 'left', delay: 250});
+        sr.reveal('.packages .sr-enter-bottom',{distance: '200px', origin:'bottom'});
+        
     },
     shuffle: function(array) {
         var currentIndex = array.length,

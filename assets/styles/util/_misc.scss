@@ -21,3 +21,16 @@
 		width: 90vw;
 	}
 }
+
+.list-inline{
+	padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+    li{
+    	display: inline-block;
+    }
+}
+
+.list-unstyled{
+	list-style: none;
+}
