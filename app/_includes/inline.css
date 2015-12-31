@@ -1,7 +1,7 @@
 <style>
 	.js{
 		[data-sr], .flip-45, #professional-skills img, .packages > section{
-			/*visibility: hidden;*/
+			visibility: hidden;
 			will-change: transform;
 		}
 	}

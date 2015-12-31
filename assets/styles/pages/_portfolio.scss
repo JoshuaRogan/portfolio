@@ -78,8 +78,8 @@ body.portfolio {
 		//First Section Summary of experience 
 		section#summary {
 			@extend .row;
-			align-items: center;
-			justify-content: center;
+			// align-items: center;
+			// justify-content: center;
 			margin-left: auto;
 			margin-right: auto;
 			width: 75vw;
@@ -95,6 +95,7 @@ body.portfolio {
 			> div {
 				@extend .col-xs-12;
 				text-align: center;
+				padding-top: 10px; 
 
 				img {
 					// @include img-responsive;
@@ -112,7 +113,6 @@ body.portfolio {
 			}
 			@include media-breakpoint-up(sm) {
 				width: 60vw;
-				height: calc(100vh - 54px);
 
 				> div {
 					align-items: center;
@@ -199,6 +199,7 @@ body.portfolio {
 							@extend .list-unstyled, .list-inline;
 
 							li {
+								padding-right: 5px; 
 								.fa {
 									font-size: 5vw;
 								}
@@ -444,6 +445,9 @@ body.portfolio {
 
 						ul {
 							padding: 10px;
+							li{
+								padding-right: 5px; 
+							}
 						}
 					}
 				}

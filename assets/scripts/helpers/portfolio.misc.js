@@ -27,27 +27,56 @@ portfolio.helpers = {
 
         //Default Scroll Reveals
         // sr.reveal('[data-sr]');
-        sr.reveal('.flip-45',{rotate: {x: 45}});
-        sr.reveal('.flip-45',{rotate: {x: 45}});
-
-
-        
-
-        //Portfolio Items
-        
-
-        //Logos on portfolio page
-        sr.reveal('#professional-skills img',{
-            rotate: {x: 45},
-            viewFactor: 0.01,
-            delay: 100
+        sr.reveal('.flip-45', {
+            rotate: {
+                x: 45
+            }
+        });
+        sr.reveal('.flip-45', {
+            rotate: {
+                x: 45
+            }
         });
 
+
+
+        //Portfolio Figures
+        sr.reveal('#projects section:nth-child(even) figure.primary', {
+            distance: '250px',
+            origin: 'right',
+            vFactor: 0.75
+        });
+        sr.reveal('#projects section:nth-child(odd) figure.primary', {
+            distance: '250px',
+            origin: 'left',
+            vFactor: 0.75
+        });
+
+        //Logos on portfolio page
+        sr.reveal('#professional-skills img', {
+            rotate: {
+                x: 45
+            },
+            viewFactor: 0.01,
+            delay: 100
+        })
+;
         //For Hire Panels
-        sr.reveal('.packages .sr-enter-right',{distance: '200px', origin:'right', delay: 250});
-        sr.reveal('.packages .sr-enter-left',{distance: '200px', origin: 'left', delay: 250});
-        sr.reveal('.packages .sr-enter-bottom',{distance: '200px', origin:'bottom'});
-        
+        sr.reveal('.packages .sr-enter-right', {
+            distance: '200px',
+            origin: 'right',
+            delay: 250
+        });
+        sr.reveal('.packages .sr-enter-left', {
+            distance: '200px',
+            origin: 'left',
+            delay: 250
+        });
+        sr.reveal('.packages .sr-enter-bottom', {
+            distance: '200px',
+            origin: 'bottom'
+        });
+
     },
     shuffle: function(array) {
         var currentIndex = array.length,
