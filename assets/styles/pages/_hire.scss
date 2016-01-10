@@ -2,6 +2,7 @@ body.hire{
 	main{
 		section.packages{
 			@include make-row;
+
 			padding: $global-fluid-padding $global-fluid-padding * 2;
 			align-items: center;
 			justify-content: center;
@@ -36,6 +37,18 @@ body.hire{
 
 				&:last-of-type{
 					border-left: none; 
+				}
+
+				@include media-breakpoint-down(sm){
+					&:first-of-type{
+						border-right: 2px solid $brand-primary; 
+					}
+
+					&:last-of-type{
+						border-left: 2px solid $brand-primary; 
+					}
+
+					border: 2px solid $brand-primary;
 				}
 				
 				> ul{
@@ -110,7 +123,7 @@ body.hire{
 				&.featured{
 					flex-basis: 36%;
 					z-index: 2;
-					border: 2px solid $brand-primary;
+					border: 2px solid $brand-primary; 
 
 					div.card-block{
 						margin-top: 25px;
@@ -128,6 +141,7 @@ body.hire{
 					}
 
 					@include media-breakpoint-down(sm){
+						flex-basis: 32%;
 						order: -1;
 						div.card-block{
 							margin-bottom: 0; 
