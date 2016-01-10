@@ -77,6 +77,17 @@ portfolio.helpers = {
             origin: 'bottom'
         });
 
+        //About page
+        sr.reveal('#cd-timeline > section:nth-child(even)',{
+            distance: '200px',
+            origin: 'right'
+        });
+
+         sr.reveal('#cd-timeline > section:nth-child(odd)',{
+            distance: '200px',
+            origin: 'left'
+        });
+
     },
     shuffle: function(array) {
         var currentIndex = array.length,
