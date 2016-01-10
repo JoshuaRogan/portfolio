@@ -8,15 +8,15 @@ excerpt: > #
 ---
 <div>
     <section>
-        <h1 data-sr><span class='icon icon-email'></span> Contact Me</h1>
-        <figure>
-        	<img data-sr='wait 0.1s, scale up 20%, vFactor 0.01, flip -90deg' src="/assets/images/misc/coffe-mug-logo.png" alt='coffe mug'>
+        <h2><span class='icon icon-email'></span> Contact Me</h2>
+        <figure class='sr-perspective'>
+        	<img class='flip-45 delay-1' src="/assets/images/misc/coffe-mug-logo.png" alt='coffe mug'>
         </figure>
         
         {% include social-icons.html %}
 
         <p class="text-muted" data-sr>Please fill out this short form if you would like to contact me directly. </p>
-        <form data-sr action="//formspree.io/JoshJRogan@gmail.com" method="POST">
+        <form action="//formspree.io/JoshJRogan@gmail.com" method="POST">
             <fieldset class="form-group">
                 <label for="_replyto"><i class="fa fa-share"></i> Email address</label>
                 <input name='_replyto' type="email" class="form-control" id="_replyto" placeholder="Please enter your email" required>

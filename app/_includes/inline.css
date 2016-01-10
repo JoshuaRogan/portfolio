@@ -1,8 +1,36 @@
 <style>
-	.js{
-		[data-sr], .flip-45, #professional-skills img, .packages > section{
-			visibility: hidden;
-			will-change: transform;
-		}
+	/**
+	 * -----------------------------------------
+	 *     Scroll Reveal inline styles
+	 *     	
+	 *     
+	 * -----------------------------------------
+	 */
+	/*Ensure elements load hidden before ScrollReveal runs*/
+	/*.js [data-sr],*/
+	.js body,
+	.js .flip-45,
+	.js #professional-skills img,
+	.js .packages > section,
+	.js #cd-timeline > section,
+	.js .delay-1,
+	.js .social-icons ul li,
+	.js form 
+	{
+		visibility: hidden;
+		will-change: transform;
+		/*border: 4px solid red;*/
 	}
+
+	/*Enhance 3D Transitions*/
+	.js .sr-perspective,
+	.js .social-icons ul
+	{
+		perspective: 800px;
+	}
+	
+
+
+
+
 </style>

@@ -25,68 +25,101 @@ portfolio.helpers = {
             vFactor: 0.3
         });
 
-        //Default Scroll Reveals
-        // sr.reveal('[data-sr]');
-        sr.reveal('.flip-45', {
-            rotate: {
-                x: 45
-            }
-        });
-        sr.reveal('.flip-45', {
-            rotate: {
-                x: 45
-            }
-        });
+        if($('.flip-45').length){
+            sr.reveal('.flip-45', {
+                rotate: {
+                    x: 45
+                }
+            });
 
+            sr.reveal('.delay-base', {
+                delay: 300
+            });
+        }
+
+        //Body loading
+        sr.reveal('body',{
+            distance: '0px',
+            scale: 1
+        }); 
 
 
         //Portfolio Figures
-        sr.reveal('#projects section:nth-child(even) figure.primary', {
-            distance: '250px',
-            origin: 'right',
-            vFactor: 0.75
-        });
-        sr.reveal('#projects section:nth-child(odd) figure.primary', {
-            distance: '250px',
-            origin: 'left',
-            vFactor: 0.75
-        });
+        if($('body').hasClass('portfolio')){
 
-        //Logos on portfolio page
-        sr.reveal('#professional-skills img', {
-            rotate: {
-                x: 45
-            },
-            viewFactor: 0.01,
-            delay: 100
-        })
-;
+            //Slide in primary figures
+            sr.reveal('#projects section:nth-child(even) figure.primary', {
+                distance: '250px',
+                origin: 'right',
+                vFactor: 0.75
+            });
+            sr.reveal('#projects section:nth-child(odd) figure.primary', {
+                distance: '250px',
+                origin: 'left',
+                vFactor: 0.75
+            });
+
+            //Logos on portfolio page
+            sr.reveal('#professional-skills img', {
+                rotate: {
+                    x: 45
+                },
+                viewFactor: 0.01,
+                delay: 100
+            });
+        }
+
+
         //For Hire Panels
-        sr.reveal('.packages .sr-enter-right', {
-            distance: '200px',
-            origin: 'right',
-            delay: 250
-        });
-        sr.reveal('.packages .sr-enter-left', {
-            distance: '200px',
-            origin: 'left',
-            delay: 250
-        });
-        sr.reveal('.packages .sr-enter-bottom', {
-            distance: '200px',
-            origin: 'bottom'
-        });
+        if($('body').hasClass('hire')){
+            sr.reveal('.packages .sr-enter-right', {
+                distance: '200px',
+                origin: 'right',
+                delay: 250
+            });
+            sr.reveal('.packages .sr-enter-left', {
+                distance: '200px',
+                origin: 'left',
+                delay: 250
+            });
+            sr.reveal('.packages .sr-enter-bottom', {
+                distance: '200px',
+                origin: 'bottom'
+            });
+        }
 
         //About page
-        sr.reveal('#cd-timeline > section:nth-child(even)',{
-            distance: '200px',
-            origin: 'right'
-        });
+        if($('body').hasClass('about')){
+            sr.reveal('#cd-timeline > section:nth-child(even)',{
+                distance: '200px',
+                origin: 'right'
+            });
 
-         sr.reveal('#cd-timeline > section:nth-child(odd)',{
-            distance: '200px',
-            origin: 'left'
-        });
+             sr.reveal('#cd-timeline > section:nth-child(odd)',{
+                distance: '200px',
+                origin: 'left'
+            });
+         }
+
+         //Contact Page 
+         if($('body').hasClass('contact')){
+            sr.reveal('body.contact ');
+        }
+
+        //Social Icons 
+        if($('.social-icons').length){
+            sr.reveal('.social-icons li',{
+                rotate: {
+                    x: 65
+                }
+            });
+        }
+
+        if($('form').length){
+            sr.reveal('form');
+        }
+
+
 
     },
     shuffle: function(array) {
