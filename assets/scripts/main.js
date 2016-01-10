@@ -17,7 +17,7 @@ var portfolio = {
         // All pages
         'common': {
             init: function() {
-                // portfolio.helpers.scrollReveal();
+                portfolio.helpers.loadPage();
             },
             finalize: function() {
                 portfolio.helpers.scrollReveal();

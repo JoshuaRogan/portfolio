@@ -1,21 +1,35 @@
 <style>
 	/**
 	 * -----------------------------------------
+	 *     Page loading effects 
+	 *     	- Simple effect for every page load 
+	 *     
+	 * -----------------------------------------
+	 */
+	.global-wrapper{
+
+	}
+	
+
+
+	/**
+	 * -----------------------------------------
 	 *     Scroll Reveal inline styles
 	 *     	
 	 *     
 	 * -----------------------------------------
 	 */
 	/*Ensure elements load hidden before ScrollReveal runs*/
-	/*.js [data-sr],*/
-	.js body,
 	.js .flip-45,
 	.js #professional-skills img,
 	.js .packages > section,
 	.js #cd-timeline > section,
 	.js .delay-1,
 	.js .social-icons ul li,
-	.js form 
+	.js form,
+	.js #summary ,
+	.js header nav, 
+	.js .jumbotron
 	{
 		visibility: hidden;
 		will-change: transform;
@@ -28,6 +42,10 @@
 	{
 		perspective: 800px;
 	}
+
+
+
+
 	
 
 
