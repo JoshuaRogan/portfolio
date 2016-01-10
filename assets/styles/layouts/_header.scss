@@ -4,7 +4,9 @@ header{
 			background-color: $josh-dark-blue;
 		}
 		ul.nav{
-			@extend .container, .text-center;
+			@extend .container;
+			text-align: center;
+			padding-top: 15px;  
 			li{
 				height: 2.5rem;
 				a{
