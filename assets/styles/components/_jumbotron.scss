@@ -1,5 +1,6 @@
 .jumbotron {
-	@extend .container-fluid, .text-center;
+	@extend .container-fluid;
+	text-align: center; 
 	@include responsive-man(min-height, 20vh, 30vh, 40vh, 40vh, 45vh);
 	background-color: $josh-dark-blue;
 	background: linear-gradient(top, $josh-dark-blue, darken($josh-dark-blue, 10%));
