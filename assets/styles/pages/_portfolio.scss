@@ -121,8 +121,24 @@ body.portfolio {
 				img{
 					margin-left: auto;
 					margin-right: auto;
-					max-height: 25vw;
-					padding: 1vw 1vw 2.5vw 1vw;
+					height: 25vw;
+					width: 25vw;
+
+				}
+
+				.beach{
+					$size: 20vw; 
+					background: url('/assets/images/me/beach-me.jpg');
+					height: $size; 
+					width: $size;
+					margin-left: auto; 
+					margin-right: auto; 
+					background-size: cover; 
+					background-position: right top;
+					border-radius: $size; 
+					background-repeat: no-repeat; 
+					border: 3px solid $josh-dark-blue; 
+					margin-bottom: 15px; 
 				}
 
 				p{
@@ -145,9 +161,10 @@ body.portfolio {
 				}
 				h2{
 					font-size: 1rem;
+					margin-bottom: $padding-top;
 				}
 				> div{
-					img{
+					img, .beach{
 						display: none; 
 					}
 
