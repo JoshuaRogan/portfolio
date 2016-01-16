@@ -1,14 +1,6 @@
 portfolio.helpers = {
     debug: true,
-    /**
-     * Display only one quote in the jumbotron
-     * 
-     */
-    displayquote: function() {
-        var quotes = $('.jumbotron blockquote');
-        var display = Math.floor(Math.random() * quotes.length);
-        quotes.eq(display).addClass('show');
-    },
+
     loadCSS: function(src) {
         if (document.createStyleSheet) {
             document.createStyleSheet(src);
@@ -125,11 +117,6 @@ portfolio.helpers = {
                 }
             });
         }
-
-       
-
-
-
     },
     shuffle: function(array) {
         var currentIndex = array.length,
@@ -147,8 +134,6 @@ portfolio.helpers = {
         return array;
     },
     loadPage: function(){
-        setTimeout(function(){
-            $('.global-wrapper').addClass('loaded');
-        }, 500);
+
     }
 };

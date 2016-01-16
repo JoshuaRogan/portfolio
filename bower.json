@@ -29,7 +29,8 @@
     "typed.js": "~1.1.1",
     "jquery-validation": "~1.14.0",
     "font-awesome-animation": "~0.0.7",
-    "tether": "~1.1.1"
+    "tether": "~1.1.1",
+    "fastdom": "~1.0.0"
   },
   "overrides": {
     "font-awesome": {
@@ -40,6 +41,11 @@
     },
     "modernizr": {
       "main": "./modernizr.js"
+    },
+    "fastdom": {
+      "main": [
+        "./fastdom.js"
+      ]
     }
   }
 }

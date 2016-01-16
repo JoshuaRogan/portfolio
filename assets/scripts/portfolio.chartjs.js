@@ -32,7 +32,7 @@ portfolio.chartjs = {
      */
     initSkillsCharts: function() {
         this.defaults();
-        this.createWebChart();
+        // this.createWebChart();
         this.createLanguagesChart();
     },
     oldDefaults: function() {
