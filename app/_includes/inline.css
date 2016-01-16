@@ -7,7 +7,7 @@
 	 * -----------------------------------------
 	 */
 	.global-wrapper{
-
+		
 	}
 	
 
@@ -15,40 +15,44 @@
 	/**
 	 * -----------------------------------------
 	 *     Scroll Reveal inline styles
+	 *     -Ensure elements load hidden before ScrollReveal runs
 	 *     	
 	 *     
 	 * -----------------------------------------
 	 */
-	/*Ensure elements load hidden before ScrollReveal runs*/
-	.js .flip-45,
-	.js #professional-skills img,
-	.js .packages > section,
-	.js #cd-timeline > section,
-	.js .delay-1,
-	.js .social-icons ul li,
-	.js form,
-	.js #summary ,
-	.js header nav, 
-	.js .jumbotron
+	.flip-45,
+	#professional-skills img,
+	.packages > section,
+	#cd-timeline > section,
+	.delay-1,
+	.social-icons ul li,
+	form,
+	#summary ,
+	header nav, 
+	.jumbotron,
+	#summary h1,
+	#summary h2,
+	#summary p,
+	#summary .beach
 	{
 		visibility: hidden;
 		will-change: transform;
-		/*border: 4px solid red;*/
 	}
 
 	/*Enhance 3D Transitions*/
-	.js .sr-perspective,
-	.js .social-icons ul
+	.sr-perspective,
+	.social-icons ul
 	{
 		perspective: 800px;
 	}
 
-
-
-
-	
-
-
+	/**
+	 * -----------------------------------------
+	 *     Above the fold inline content
+	 *     	
+	 *     
+	 * -----------------------------------------
+	 */
 
 
 </style>

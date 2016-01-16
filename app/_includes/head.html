@@ -1,7 +1,4 @@
 <head lang="en">
-    {% include inline.js %}
-    {% include inline.css %}
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +7,6 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-    
-
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
@@ -32,5 +27,9 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#2c3e50">
+    
+    {% include inline.css %}
+    {% include inline.js %}
+    
     
 </head>

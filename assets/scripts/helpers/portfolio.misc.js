@@ -19,7 +19,11 @@ portfolio.helpers = {
 
         //Main layout elements
         if($('header nav').length){
-            sr.reveal('header nav'); 
+            sr.reveal('header nav',{
+                origin: 'top',
+                scale: 1, 
+                distance: '100px'
+            }); 
         }
 
         if($('.flip-45').length){
@@ -41,7 +45,11 @@ portfolio.helpers = {
         }
 
         if($('section.jumbotron').length){
-            sr.reveal('section.jumbotron');
+            sr.reveal('section.jumbotron', {
+                origin: 'top', 
+                scale: 1,
+                distance: '200px'
+            });
         }
 
         //Portfolio Figures
@@ -70,6 +78,35 @@ portfolio.helpers = {
 
             //Summary Section 
             sr.reveal('#summary');
+
+            //Flip Image
+            sr.reveal('#summary .beach',{
+                rotate: {
+                    x: 45
+                },
+                viewFactor: 0.01,
+                delay: 200
+            });
+
+            sr.reveal('#summary h1', {
+                distance: '150px',
+                origin: 'top',
+                duration: 400
+            });
+
+            sr.reveal('#summary h2',{
+                distance: '150px',
+                origin: 'bottom',
+                duration: 400
+            });
+
+            sr.reveal('#summary p',{
+                distance: '150px',
+                origin: 'bottom',
+                duration: 400
+            });
+
+
         }
 
 
