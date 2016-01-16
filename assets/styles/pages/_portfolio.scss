@@ -247,8 +247,22 @@ body.portfolio {
 							@extend .list-unstyled, .list-inline;
 
 							li {
-								transition: transform 100ms ease-in-out; 
+								// transition: transform 150ms ease-in-out; 
+								
+								
 								padding-right: 5px; 
+
+								.fa, .icon:before{
+									transition: transform 150ms cubic-bezier(0.55, 0, 0.1, 1); 
+									backface-visibility: hidden;
+									text-shadow: 0 4px 4px rgba(black, 0.20);
+
+									&:hover{
+										
+										transform: scale(1.2); 
+									}
+								}
+
 								.fa {
 									font-size: 3vw;
 								}
@@ -259,9 +273,7 @@ body.portfolio {
 									position: relative;
 								}
 
-								&:hover{
-									transform: scale(1.1); 
-								}
+								
 							}
 						}
 					}
@@ -324,7 +336,7 @@ body.portfolio {
 					figure.tools, figure.links {
 						ul li a {
 							.icon:before, .fa:before {
-								font-size: 3vw;
+								font-size: 2vw;
 							}
 						}
 					}
