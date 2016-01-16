@@ -98,9 +98,20 @@ body.portfolio {
 			height: calc(100vh - 54px); //Full Height - Navbar
 
 			h1{
+				font-size: 3.5rem; 
 				font-weight: 900; 
-				letter-spacing: 2px; 
+				letter-spacing: 0.50rem; 
 				text-transform: uppercase; 
+				margin-bottom: 0; 
+			}
+
+			h2{
+				font-size: 1.5rem;
+				font-weight: 400;  
+				&:before{
+					content: none; 
+				}
+				margin-bottom: $padding-top * 2;  
 			}
 
 			> div{
@@ -130,6 +141,10 @@ body.portfolio {
 				height: initial;
 				h1{
 					font-size: 2rem; 
+					letter-spacing: 0.50rem; 
+				}
+				h2{
+					font-size: 1rem;
 				}
 				> div{
 					img{
