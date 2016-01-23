@@ -6,6 +6,10 @@ This is the third iteration of my website. The main goal is to as simple as poss
   * [Formspree] - for simple setup 
   * [Twitter Bootstrap] - great UI boilerplate for modern web apps
   * [Gulp] - the streaming build system
+  * [Bower] - a package manager for the web
+  * [Cloudflare] - protects and accelerates websites
+  * [Nginx] - high performance HTTP server
+  * [Digital Ocean] - simple cloud infrastructure for hosting
 
 ## Version 
 3.0.0
@@ -19,6 +23,10 @@ This is the third iteration of my website. The main goal is to as simple as poss
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
    [Gulp]: <http://gulpjs.com>
    [Formspree]: <formspree.io>
+   [Bower]: <http://bower.io/>
+   [Cloudflare]: <https://www.cloudflare.com/overview/>
+   [nginx]: <https://www.nginx.com/resources/wiki/>
+   [Digital Ocean]: <https://www.digitalocean.com/features/scaling/>
    
 
 
