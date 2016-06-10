@@ -13,7 +13,7 @@ body.home{
 				@extend .col-md-4;
 				
 				img{
-					@extend .img-responsive, .center-block; 
+					@extend .img-fluid, .center-block; 
 				}
 			}
 

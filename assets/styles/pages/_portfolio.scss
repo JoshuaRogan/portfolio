@@ -59,7 +59,7 @@ body.portfolio {
 
 				a {
 					img {
-						@extend .img-responsive;
+						@extend .img-fluid;
 						width: 100%;
 					}
 				}
@@ -585,7 +585,7 @@ body.portfolio {
 
 								a {
 									img {
-										@extend .img-responsive;
+										@extend .img-fluid;
 										width: 100%;
 									}
 								}

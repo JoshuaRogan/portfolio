@@ -1,6 +1,6 @@
 .social-icons{
 	ul{
-		@extend .list-unstyle, .list-inline;
+		@extend .list-unstyle, .list-inline !optional;
 		text-align: center;
 		li{
 			a{
