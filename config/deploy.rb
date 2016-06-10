@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.4.1'
 
 set :application, 'portfolio'
 set :repo_url, 'git@github.com:JoshuaRogan/portfolio.git'
@@ -49,7 +49,24 @@ namespace :deploy do
 
 end
 
+## Local Build
+namespace :deploy do
+  desc 'Upload files that are built on the local machine'
+  task :upload do 
+    on roles(:all) do |server|
+      print "\nBuilding Gulp for production\n"
+      # Run NPM Install, Bower Install then gulp
+      run_local("gulp --production")
+      print "\nUploading files\n"
+      upload! "app/_site/", "#{fetch(:upload_to)}/releases/#{fetch(:release_timestamp)}/app/_site/", recursive: true
+    end
+  end
+end
+after 'deploy:updated', 'deploy:upload'
 
+
+
+## Server Build
 namespace :deploy do
   desc 'Production build all assets on remote server'
   task :build do
@@ -60,4 +77,13 @@ namespace :deploy do
     end
   end
 end
-after 'deploy:updated', 'deploy:build'
+# after 'deploy:updated', 'deploy:build'
+
+
+def run_local(cmd)
+  system cmd
+  if($?.exitstatus != 0) then
+    puts 'Failed System Command: Exit Code: ' + $?.exitstatus.to_s
+    exit
+  end
+end

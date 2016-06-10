@@ -31,6 +31,7 @@ server 'droplet.joshuarogan.com', user: 'josh', roles: %w{app web}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 set :deploy_to, '~/sites/portfolio-prod'
+set :upload_to, '/home/josh/sites/portfolio-prod'
 
 
 # Custom SSH Options
