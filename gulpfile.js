@@ -254,7 +254,8 @@ gulp.task('watch', function() {
         server: {
             baseDir: "./app/_site"
         },
-        notify: false
+        notify: false, 
+        open: false
     });
     gulp.watch([path.source + 'styles/**/*'], ['styles']);
     gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
